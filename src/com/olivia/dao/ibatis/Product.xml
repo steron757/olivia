@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+
+<sqlMap namespace="product">
+
+
+	<resultMap id="UserMap" class="com.olivia.model.Product">
+		<result property="id" column="id" jdbcType="INT" />
+		<result property="brand" column="brand" jdbcType="VARCHAR" />
+		<result property="model" column="model" jdbcType="VARCHAR" />
+		<result property="price" column="price" jdbcType="VARCHAR" />
+		<result property="link" column="link" jdbcType="VARCHAR" />
+		<result property="description" column="description" jdbcType="VARCHAR" />
+		<result property="retailer" column="retailer" jdbcType="VARCHAR" />
+		<result property="createDate" column="create_date" jdbcType="VARCHAR" />
+		<result property="image" column="image" jdbcType="VARCHAR" />
+		<result property="productType" column="producttype" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="getUsers" resultMap="UserMap">
+		select id,producttype,brand,model,price,link,description,retailer,create_date,image from product
+	</select>
+</sqlMap>

@@ -54,7 +54,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div>
 			<div>
 				<div id="logo">
-<<<<<<< HEAD
 					<a href="index.jsp"><img src="<%=path %>/images/logo.gif" alt="Logo"/></a>
 				</div>
 				<div>
