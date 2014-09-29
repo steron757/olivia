@@ -9,7 +9,10 @@ body {
 	min-width: 960px;
 	padding: 0;
 	width: 100%;
+<<<<<<< HEAD
 	overflow-x:hidden;
+=======
+>>>>>>> 13a307351836b2cfcfff3d4e8973a7b01bf885a5
 }
 
 a {
