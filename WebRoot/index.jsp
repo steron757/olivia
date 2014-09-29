@@ -20,10 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<![endif]-->
     <base href="<%=basePath%>">
     
-<<<<<<< HEAD
-=======
     <title>My JSP 'index.jsp' starting page</title>
->>>>>>> 13a307351836b2cfcfff3d4e8973a7b01bf885a5
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -32,7 +29,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-<<<<<<< HEAD
 	<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 	<script type="text/javascript" src="js/jq.snow.js"></script>
 	<script>
@@ -52,8 +48,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		$("#homeimage"+order).fadeIn("slow");
 	} 
 </script>
-=======
->>>>>>> 13a307351836b2cfcfff3d4e8973a7b01bf885a5
 </head>
 <body>
 	<div id="header">
@@ -68,15 +62,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<a href="signup.jsp">My Account</a>
 						<a href="index.jsp">Help</a>
 						<a href="signin.jsp" class="last">Sign in</a>
-=======
-					<a href="index.jsp"><img src="images/logo.gif" alt="Logo"/></a>
-				</div>
-				<div>
-					<div>
-						<a href="signup.html">My Account</a>
-						<a href="index.jsp">Help</a>
-						<a href="signin.html" class="last">Sign in</a>
->>>>>>> 13a307351836b2cfcfff3d4e8973a7b01bf885a5
 					</div>
 					<form action="#">
 						<input type="text" id="search" maxlength="30" />
@@ -86,7 +71,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 			<ul>
 				<li class="current"><a href="index.jsp">Home</a></li>
-<<<<<<< HEAD
 				<li><a href="product.jsp">The Pastry shop</a></li>
 				<li><a href="about.jsp">About us</a></li>
 				<li><a href="services.jsp">Services</a></li>
@@ -116,27 +100,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<img id="homeimage8" name="homeimage" src="<%=path %>/images/home/home_swissroll.jpg" style="display: none;"/>
 					<img id="homeimage9" name="homeimage" src="<%=path %>/images/home/home_others.jpg" style="display: none;"/>
 				</a>
-=======
-				<li><a href="product.html">The Pastry shop</a></li>
-				<li><a href="about.html">About us</a></li>
-				<li><a href="services.html">Services</a></li>
-				<li><a href="blog.html">Blog</a></li>
-				<li><a href="contact.html">Contact Us</a></li>
-			</ul>
-			<div id="section">
-				<ul>
-					<li><a href="index.jsp">cheese cakes</a></li>
-					<li><a href="index.jsp">sponge cakes</a></li>
-					<li><a href="index.jsp">butter cakes</a></li>
-					<li class="selected"><a href="index.jsp">layer cakes</a></li>
-					<li><a href="index.jsp">sheet cakes</a></li>
-					<li><a href="index.jsp">cupcakes</a></li>
-					<li><a href="index.jsp">fondant cakes</a></li>
-					<li><a href="index.jsp">swiss roll</a></li>
-					<li><a href="index.jsp">other desserts</a></li>
-				</ul>
-				<a href="index.jsp"><img src="images/wedding-cupcakes-large.jpg" alt="Image"/></a>
->>>>>>> 13a307351836b2cfcfff3d4e8973a7b01bf885a5
 			</div>
 		</div>
 	</div>
@@ -155,7 +118,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 				<ul>
 					<li class="first">
-<<<<<<< HEAD
 						<a href="index.jsp"><img src="<%=path %>/images/cake.jpg" alt="Image" /></a>
 					</li>
 					<li>
@@ -163,15 +125,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</li>
 					<li>
 						<a href="index.jsp"><img src="<%=path %>/images/cupcake.jpg" alt="Image" /></a>
-=======
-						<a href="index.jsp"><img src="images/cake.jpg" alt="Image" /></a>
-					</li>
-					<li>
-						<a href="index.jsp"><img src="images/burgercake.jpg" alt="Image" /></a>
-					</li>
-					<li>
-						<a href="index.jsp"><img src="images/cupcake.jpg" alt="Image" /></a>
->>>>>>> 13a307351836b2cfcfff3d4e8973a7b01bf885a5
 					</li>
 				</ul>
 			</div>
@@ -184,11 +137,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="signup">
 						<div>
 							<b>Too <span>BUSY</span> to shop?</b>
-<<<<<<< HEAD
 							<a href="signin.jsp">Sign up for free</a>
-=======
-							<a href="signin.html">Sign up for free</a>
->>>>>>> 13a307351836b2cfcfff3d4e8973a7b01bf885a5
 							<p>and we&#39;ll deliver it on your doorstep</p>
 						</div>
 					</div>
@@ -198,11 +147,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<li><a href="#" target="_blank" class="facebook">Facebook</a></li>
 							<li><a href="#" target="_blank" class="twitter">Twitter</a></li>
 							<li><a href="#" class="subscribe">Subscribe</a></li>
-<<<<<<< HEAD
 							<li><a href="http://www.weibo.com/u/1814073407" target="_blank" class="flicker">Weibo</a></li>
-=======
-							<li><a href="http://www.flickr.com/freewebsitetemplates/" target="_blank" class="flicker">Flicker</a></li>
->>>>>>> 13a307351836b2cfcfff3d4e8973a7b01bf885a5
 						</ul>
 					</div>
 				</div>
@@ -219,38 +164,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div id="featured">
 			<ul>
 				<li class="first">
-<<<<<<< HEAD
 					<a href="index.jsp"><img src="<%=path %>/images/fruit-cake.jpg" alt="Image" /></a>
-=======
-					<a href="index.jsp"><img src="images/fruit-cake.jpg" alt="Image" /></a>
->>>>>>> 13a307351836b2cfcfff3d4e8973a7b01bf885a5
 					<h2><a href="index.jsp">Tips on how to preserve</a></h2>
 					<p>Lorem ipsum dolor sit amet, consectetuer adispiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. <a href="index.jsp" class="readmore">read more</a></p>
 				</li>
 				<li>
-<<<<<<< HEAD
 					<a href="index.jsp"><img src="<%=path %>/images/italian.jpg" alt="Image" /></a>
-=======
-					<a href="index.jsp"><img src="images/italian.jpg" alt="Image" /></a>
->>>>>>> 13a307351836b2cfcfff3d4e8973a7b01bf885a5
 					<h2><a href="index.jsp">Menu of the day: Italian</a></h2>
 					<p>Lorem ipsum dolor sit amet, consectetuer adispiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. <a href="index.jsp" class="readmore">read more</a></p>
 				</li>
 				<li>
-<<<<<<< HEAD
 					<a href="index.jsp"><img src="<%=path %>/images/fruit.jpg" alt="Image" /></a>
-=======
-					<a href="index.jsp"><img src="images/fruit.jpg" alt="Image" /></a>
->>>>>>> 13a307351836b2cfcfff3d4e8973a7b01bf885a5
 					<h2><a href="index.jsp">Fruit menu for your diet</a></h2>
 					<p>Lorem ipsum dolor sit amet, consectetuer adispiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. <a href="index.jsp" class="readmore">read more</a></p>
 				</li>
 				<li>
-<<<<<<< HEAD
 					<a href="index.jsp"><img src="<%=path %>/images/desserts.jpg" alt="Image" /></a>
-=======
-					<a href="index.jsp"><img src="images/desserts.jpg" alt="Image" /></a>
->>>>>>> 13a307351836b2cfcfff3d4e8973a7b01bf885a5
 					<h2><a href="index.jsp">Desserts for every occassion</a></h2>
 					<p>Lorem ipsum dolor sit amet, consectetuer adispiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. <a href="index.jsp" class="readmore">read more</a></p>
 				</li>

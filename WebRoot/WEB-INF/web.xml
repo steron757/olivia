@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
 <web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
@@ -28,15 +27,4 @@
 		<filter-name>AccessFilter</filter-name>
 		<url-pattern>/servlet/*</url-pattern>
 	</filter-mapping>
-=======
-<web-app version="3.0" 
-	xmlns="http://java.sun.com/xml/ns/javaee" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
-	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
-  <display-name></display-name>	
-  <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
-  </welcome-file-list>
->>>>>>> 13a307351836b2cfcfff3d4e8973a7b01bf885a5
 </web-app>
