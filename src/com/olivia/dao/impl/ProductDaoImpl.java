@@ -19,6 +19,6 @@ public class ProductDaoImpl implements ProductDao {
 	}
 
 	public List<?> selectProduct(){
-		return (List<?>) getSqlMapClientTemplate().queryForList("getProduct");
+		return (List<?>) getSqlMapClientTemplate().queryForList("getProducts");
 	}
 }

@@ -2,22 +2,18 @@
 
 <!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
 
-<sqlMap namespace="product">
+<sqlMap namespace="user">
 
-	<resultMap id="ProductMap" class="com.olivia.model.Product">
+	<resultMap id="UserMap" class="com.olivia.model.User">
 		<result property="id" column="id" jdbcType="INT" />
-		<result property="brand" column="brand" jdbcType="VARCHAR" />
-		<result property="model" column="model" jdbcType="VARCHAR" />
-		<result property="price" column="price" jdbcType="VARCHAR" />
-		<result property="link" column="link" jdbcType="VARCHAR" />
-		<result property="description" column="description" jdbcType="VARCHAR" />
-		<result property="retailer" column="retailer" jdbcType="VARCHAR" />
-		<result property="createDate" column="create_date" jdbcType="VARCHAR" />
-		<result property="image" column="image" jdbcType="VARCHAR" />
-		<result property="productType" column="producttype" jdbcType="VARCHAR" />
+		<result property="name" column="id" jdbcType="VARCHAR" />
 	</resultMap>
 
-	<select id="getProduct" resultMap="ProductMap">
-		select id,producttype,brand,model,price,link,description,retailer,create_date,image from product
+	<select id="getUsers" resultMap="UserMap">
+		select id,name from T_USERS
 	</select>
+	
+	<insert id="insertIP" parameterClass="com.olivia.model.User">
+		insert into access(ip,time) values(#ip:VARCHAR#,NOW())
+	</insert>
 </sqlMap>

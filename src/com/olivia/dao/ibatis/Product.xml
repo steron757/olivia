@@ -4,8 +4,7 @@
 
 <sqlMap namespace="product">
 
-
-	<resultMap id="UserMap" class="com.olivia.model.Product">
+	<resultMap id="ProductMap" class="com.olivia.model.Product">
 		<result property="id" column="id" jdbcType="INT" />
 		<result property="brand" column="brand" jdbcType="VARCHAR" />
 		<result property="model" column="model" jdbcType="VARCHAR" />
@@ -18,7 +17,7 @@
 		<result property="productType" column="producttype" jdbcType="VARCHAR" />
 	</resultMap>
 
-	<select id="getUsers" resultMap="UserMap">
+	<select id="getProducts" resultMap="ProductMap">
 		select id,producttype,brand,model,price,link,description,retailer,create_date,image from product
 	</select>
 </sqlMap>
