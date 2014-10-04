@@ -54,7 +54,6 @@ public class AccessFilter implements Filter {
 	    System.out.println("------------------User IP: " + ip + "----, Time:"+ time +"------------");
 		User user = new User();
 		user.setIp(ip);
-		throw new Exception();
-//		udao.insertIP(user);//TODO
+		udao.insertIP(user);//TODO
 	}
 }

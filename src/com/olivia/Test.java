@@ -23,5 +23,6 @@ public class Test {
 //		}
 	
 		System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new java.util.Date()));
+		org.apache.log4j.LogManager l;
 	}
 }

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<constant name="struts.devMode" value="true" /> <!--development mode set -->
+	<constant name="struts.action.extension" value="action,,do" /> <!--development mode set -->
+	<!--struts标签去除样式 -->
+	<constant name="struts.ui.theme" value="simple" />
+	<!--用spring管理struts2的action -->
+	<constant name="struts.objectFactory" value="spring" />
+	<!-- 临时存放文件的路径 如果不要这个路径，就会报错 -->
+	<constant name="struts.multipart.saveDir" value="d:/temp"></constant>
+	<!-- 限制总的上传大小 -->
+	<constant name="struts.multipart.maxSize" value="51200000" />
+
+	<!-- 上传文件时候request的上传内容会变成空的处理办法 -->
+	<bean type="org.apache.struts2.dispatcher.multipart.MultiPartRequest"
+		name="myRequestParser" class="com.olivia.util.RequestParseWrapper"
+		scope="default" optional="true " />
+	<constant name="struts.multipart.handler" value="myRequestParser" />
+
+	<package name="ssh" extends="struts-default">
+		<action name="base" class="com.action.BaseAction" />
+	</package>
+
+	<package name="default" namespace="/" extends="ssh,json-default">
+		<default-action-ref name="" />
+
+		<action name="uploadOne" class="com.olivia.action.UploadImageAction">
+			<!-- 限制图片的格式和图片的大小 -->
+			<interceptor-ref name="fileUpload">
+				<param name="allowedTypes">image/bmp,image/png,image/gif,image/jpeg,image/jpg</param>
+				<param name="maximumSize">5120000</param>
+			</interceptor-ref>
+			<!-- 默认的拦截器，必须要写 -->
+			<interceptor-ref name="defaultStack" />
+			<result name="success">/admin/mgr.jsp</result>
+			<result name="input">/admin/mgr.jsp</result>
+		</action>
+
+		<action name="subject_*" class="com.olivia.action.SubjectAction" method="{1}">
+			<result name="success">/admin/mgr.jsp</result>
+			<result name="input">/admin/mgr.jsp</result>
+			<result name="error">/admin/mgr.jsp</result>
+		</action>
+	</package>
+</struts>    
