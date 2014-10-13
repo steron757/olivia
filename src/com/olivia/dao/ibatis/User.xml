@@ -14,6 +14,6 @@
 	</select>
 	
 	<insert id="insertIP" parameterClass="com.olivia.model.User">
-		insert into access(ip,time) values(#ip:VARCHAR#,NOW())
+		insert into access(ip,time,city) values(#ip:VARCHAR#,NOW(),#belongcity:VARCHAR#)
 	</insert>
 </sqlMap>

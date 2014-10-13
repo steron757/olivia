@@ -20,7 +20,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<![endif]-->
     <base href="<%=basePath%>">
     
-    <title>My JSP 'index.jsp' starting page</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -58,9 +57,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 				<div>
 					<div>
-						<a href="signup.jsp">My Account</a>
-						<a href="index.jsp">Help</a>
-						<a href="signin.jsp" class="last">Sign in</a>
+						<a href="admin/mgr.jsp">管理入口</a>
+						<a href="signup.jsp">我的账户</a>
+						<a href="index.jsp">帮助</a>
+						<a href="signin.jsp" class="last">登入</a>
 					</div>
 					<form action="#">
 						<input type="text" id="search" maxlength="30" />
@@ -69,24 +69,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 			</div>
 			<ul>
-				<li class="current"><a href="index.jsp">Home</a></li>
-				<li><a href="product.jsp">The Pastry shop</a></li>
-				<li><a href="about.jsp">About us</a></li>
-				<li><a href="services.jsp">Services</a></li>
-				<li><a href="blog.jsp">Blog</a></li>
-				<li><a href="contact.jsp">Contact Us</a></li>
+				<li class="current"><a href="index.jsp">首页</a></li>
+				<li><a href="product.jsp">糕点屋</a></li>
+				<li><a href="about.jsp">关于我们</a></li>
+				<li><a href="services.jsp">服务</a></li>
+				<li><a href="blog.jsp">博客</a></li>
+				<li><a href="contact.jsp">联系我们</a></li>
 			</ul>
 			<div id="section">
 				<ul>
-					<li><a href="javascript:void(0)" onclick="changeHomeImg('1')">cheese cakes</a></li>
-					<li><a href="javascript:void(0)" onclick="changeHomeImg('2')">sponge cakes</a></li>
-					<li><a href="javascript:void(0)" onclick="changeHomeImg('3')">butter cakes</a></li>
-					<li class="selected"><a href="javascript:void(0)" onclick="changeHomeImg('4')">layer cakes</a></li>
-					<li><a href="javascript:void(0)" onclick="changeHomeImg('5')">sheet cakes</a></li>
-					<li><a href="javascript:void(0)" onclick="changeHomeImg('6')">cupcakes</a></li>
-					<li><a href="javascript:void(0)" onclick="changeHomeImg('7')">fondant cakes</a></li>
-					<li><a href="javascript:void(0)" onclick="changeHomeImg('8')">swiss roll</a></li>
-					<li><a href="javascript:void(0)" onclick="changeHomeImg('9')">other desserts</a></li>
+					<li><a href="javascript:void(0)" onclick="changeHomeImg('1')">芝士蛋糕</a></li>
+					<li><a href="javascript:void(0)" onclick="changeHomeImg('2')">海绵蛋糕</a></li>
+					<li><a href="javascript:void(0)" onclick="changeHomeImg('3')">奶油蛋糕</a></li>
+					<li class="selected"><a href="javascript:void(0)" onclick="changeHomeImg('4')">层状蛋糕</a></li>
+					<li><a href="javascript:void(0)" onclick="changeHomeImg('5')">片状蛋糕</a></li>
+					<li><a href="javascript:void(0)" onclick="changeHomeImg('6')">杯形状蛋糕</a></li>
+					<li><a href="javascript:void(0)" onclick="changeHomeImg('7')">翻糖蛋糕</a></li>
+					<li><a href="javascript:void(0)" onclick="changeHomeImg('8')">瑞士卷</a></li>
+					<li><a href="javascript:void(0)" onclick="changeHomeImg('9')">其他甜点</a></li>
 				</ul>
 				<a href="index.jsp">
 					<img id="homeimage1" name="homeimage" src="<%=path %>/images/home/home_cheesecake.jpg"style="display: none;"/>
@@ -105,15 +105,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div id="content">
 		<div class="home">
 			<div class="aside">
-				<h1>Welcome to our site</h1>
-				<p>Pastry is the name given to various kinds of baked goods made from ingredients such as flour, butter, shortening, baking powder or eggs. Small cakes, tarts and other sweet baked goods are called &#34;pastries&#34;.</p> 
-				<p>Pastry may also refer to the dough from which such baked goods are made. Pastry dough is rolled out thinly and used as a base for baked goods. Common pastry dishes include pies, tarts and quiches. 
-				<p>Pastry is distinguished from bread by having a higher fat content, which contributes to a flaky or crumbly texture. A good pastry is light and airy and fatty, but firm enough to support the weight of the filling. When making a shortcrust pastry, care must be taken to blend the fat and flour thoroughly before adding. <a href="index.jsp" class="readmore">read more</a></p>
+				<h1>欢迎来到Olivia蛋糕屋</h1>
+				<p>糕点是以各种原料，如面粉，黄油，起酥油，发酵粉或鸡蛋制成的烘焙食品的名称。小蛋糕，馅饼和甜等烘焙食品被称为“点心”。 </p>
+				<p>糕点也可指从这样的烘焙食品是由面团。油酥面团铺开薄，并作为烘焙食品基地。常见的糕点美食，包括馅饼，馅饼和乳蛋饼。 
+				<p>糕点面包，从由具有较高的脂肪含量，这有助于片状或易碎的质地区别。一个好的糕点是光线和通风和脂肪，但足够牢固，能够支撑填充的重量。当进行shortcrust糕点，必须小心混合脂肪和添加面粉前彻底。 <a href="index.jsp" class="readmore">阅读更多</a></p>
 			</div>
 			<div class="section">
 				<div>
-					<h2>The food story</h2>
-					<p>Lorem ipsum dolor sit amet, consectetuer adispiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
+					<h2>提拉米苏的故事</h2>
+					<p>提拉米苏，Tiramisu，在意大利文里，有 “ 带我走 ”
+						的含义，带走的不只是美味，还有爱和幸福。关于提拉米苏的由来，有一个温馨的故事：二战时期，一个意大利士兵要出征了，
+						可是家里已经什么也没有了，爱他的妻子为了给他准备干粮，把家里所有能吃的饼干、面包全做进了一个糕点里，那个糕点就叫提拉米苏。
+						每当这个士兵在战场上吃到提拉米苏就会想起他的家，想起家中心爱的人。</p>
 				</div>
 				<ul>
 					<li class="first">
@@ -153,8 +156,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="section">
 					<div>
 						<div>
-							<h3><a href="index.jsp">Daily Cake Surprise</a></h3>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exertation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in.</p>
+							<h3><a href="index.jsp">每日惊喜</a></h3>
+							<p>最近看《破产姐妹》深深的爱上MAX，没想到女汉子也喜欢烘焙，哈哈，看到可爱的苏菲那么爱吃MAX做的cupcake，还有白富美凯瑟琳用心经营她与MAX的纸杯蛋糕屋等等，这种感觉真心美好，搞到我都想开一家烘焙店~闲话就不多说了，下面是cupcake海绵蛋糕胚做法以及CUPCAKE奶油霜和挤花~
+								和精致仿佛的法式甜点相比，Cupcake充满着美国式的气氛，简单，自由，充满快乐，Cupcake是美国人生活的一部分，也是最容易操作的甜点~
+							</p>
 						</div>
 					</div>
 				</div>

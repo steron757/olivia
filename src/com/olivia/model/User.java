@@ -6,6 +6,7 @@ public class User {
 	private String name;
 	private String lastLoginTime;
 	private String ip;
+	private String belongcity;
 
 	public String getId() {
 		return id;
@@ -37,6 +38,14 @@ public class User {
 
 	public void setIp(String ip) {
 		this.ip = ip;
+	}
+
+	public String getBelongcity() {
+		return belongcity;
+	}
+
+	public void setBelongcity(String belongcity) {
+		this.belongcity = belongcity;
 	}
 
 }
