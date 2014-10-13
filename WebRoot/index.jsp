@@ -57,7 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 				<div>
 					<div>
-						<a href="admin/mgr.jsp">管理入口</a>
+						<a href="admin/login.jsp">管理入口</a>
 						<a href="signup.jsp">我的账户</a>
 						<a href="index.jsp">帮助</a>
 						<a href="signin.jsp" class="last">登入</a>
