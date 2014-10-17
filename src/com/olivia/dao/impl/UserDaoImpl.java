@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
 
 import com.olivia.dao.UserDao;
+import com.olivia.model.Message;
 import com.olivia.model.User;
 
 public class UserDaoImpl implements UserDao {
@@ -25,6 +26,12 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public boolean insertIP(User user) {
 		Object obj = this.getSqlMapClientTemplate().insert("insertIP", user);
+		return obj != null;
+	}
+
+	@Override
+	public boolean addMessage(Message message) {
+		Object obj = this.getSqlMapClientTemplate().insert("insertMessage", message);
 		return obj != null;
 	}
 }

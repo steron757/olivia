@@ -34,6 +34,7 @@ public class KindEditorAction extends BaseAction {
 	private HttpServletResponse response = ServletActionContext.getResponse();
 	public Map<String, String> responseJson; 
 	
+	@SuppressWarnings("unchecked")
 	public String upload() throws FileUploadException{
 		String savePath = request.getServletContext().getRealPath("/") + "upload/";
 
@@ -95,12 +96,12 @@ public class KindEditorAction extends BaseAction {
 		FileItemFactory factory = new DiskFileItemFactory();
 		ServletFileUpload upload = new ServletFileUpload(factory);
 		upload.setHeaderEncoding("UTF-8");
-		List items = upload.parseRequest(request);
-		Iterator itr = items.iterator();
+		List<?> items = upload.parseRequest(request);
+		Iterator<?> itr = items.iterator();
 		while (itr.hasNext()) {
 			FileItem item = (FileItem) itr.next();
 			String fileName = item.getName();
-			long fileSize = item.getSize();
+//			long fileSize = item.getSize();
 			if (!item.isFormField()) {
 				//检查文件大小
 				if(item.getSize() > maxSize){
@@ -134,6 +135,7 @@ public class KindEditorAction extends BaseAction {
 		
 	}
 	
+	@SuppressWarnings({ "unused", "unchecked" })
 	private String getError(String message) {
 		JSONObject obj = new JSONObject();
 		obj.put("error", 1);
@@ -142,6 +144,7 @@ public class KindEditorAction extends BaseAction {
 	}
 	
 	
+	@SuppressWarnings("unchecked")
 	public String fileManager(){
 		String rootPath = request.getServletContext().getRealPath("/") + "upload/";
 		//根目录URL，可以指定绝对路径，比如 http://www.yoursite.com/attached/
@@ -194,6 +197,7 @@ public class KindEditorAction extends BaseAction {
 		}
 
 		//遍历目录取的文件信息
+		@SuppressWarnings("rawtypes")
 		List<Hashtable> fileList = new ArrayList<Hashtable>();
 		if(currentPathFile.listFiles() != null) {
 			for (File file : currentPathFile.listFiles()) {
@@ -248,10 +252,10 @@ public class KindEditorAction extends BaseAction {
 	}
 
 
-	public class TypeComparator implements Comparator {
+	public class TypeComparator implements Comparator<Object> {
 		public int compare(Object a, Object b) {
-			Hashtable hashA = (Hashtable)a;
-			Hashtable hashB = (Hashtable)b;
+			Hashtable<?, ?> hashA = (Hashtable<?, ?>)a;
+			Hashtable<?, ?> hashB = (Hashtable<?, ?>)b;
 			if (((Boolean)hashA.get("is_dir")) && !((Boolean)hashB.get("is_dir"))) {
 				return -1;
 			} else if (!((Boolean)hashA.get("is_dir")) && ((Boolean)hashB.get("is_dir"))) {
@@ -263,10 +267,10 @@ public class KindEditorAction extends BaseAction {
 	}
 	
 
-	public class SizeComparator implements Comparator {
+	public class SizeComparator implements Comparator<Object> {
 		public int compare(Object a, Object b) {
-			Hashtable hashA = (Hashtable)a;
-			Hashtable hashB = (Hashtable)b;
+			Hashtable<?, ?> hashA = (Hashtable<?, ?>)a;
+			Hashtable<?, ?> hashB = (Hashtable<?, ?>)b;
 			if (((Boolean)hashA.get("is_dir")) && !((Boolean)hashB.get("is_dir"))) {
 				return -1;
 			} else if (!((Boolean)hashA.get("is_dir")) && ((Boolean)hashB.get("is_dir"))) {
@@ -284,10 +288,10 @@ public class KindEditorAction extends BaseAction {
 	}
 	
 
-	public class NameComparator implements Comparator {
+	public class NameComparator implements Comparator<Object> {
 		public int compare(Object a, Object b) {
-			Hashtable hashA = (Hashtable)a;
-			Hashtable hashB = (Hashtable)b;
+			Hashtable<?, ?> hashA = (Hashtable<?, ?>)a;
+			Hashtable<?, ?> hashB = (Hashtable<?, ?>)b;
 			if (((Boolean)hashA.get("is_dir")) && !((Boolean)hashB.get("is_dir"))) {
 				return -1;
 			} else if (!((Boolean)hashA.get("is_dir")) && ((Boolean)hashB.get("is_dir"))) {

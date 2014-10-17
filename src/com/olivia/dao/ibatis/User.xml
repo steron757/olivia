@@ -12,8 +12,17 @@
 	<select id="getUsers" resultMap="UserMap">
 		select id,name from T_USERS
 	</select>
-	
+
 	<insert id="insertIP" parameterClass="com.olivia.model.User">
 		insert into access(ip,time,city) values(#ip:VARCHAR#,NOW(),#belongcity:VARCHAR#)
 	</insert>
+
+	<insert id="insertMessage" parameterClass="com.olivia.model.Message">
+		insert into message(name,email,subject,content,time) value
+		(#name:VARCHAR#,#email:VARCHAR#,#subject:VARCHAR#,#content:VARCHAR#,NOW())
+		<selectKey resultClass="java.lang.String" keyProperty="id">
+			select last_insert_id() as id
+		</selectKey>
+	</insert>
+
 </sqlMap>

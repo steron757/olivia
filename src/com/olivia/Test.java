@@ -1,15 +1,5 @@
 package com.olivia;
 
-import java.text.SimpleDateFormat;
-import java.util.List;
-
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import com.olivia.dao.ProductDao;
-import com.olivia.dao.impl.ProductDaoImpl;
-import com.olivia.model.Product;
-
 
 public class Test {
 
@@ -22,7 +12,5 @@ public class Test {
 //			System.out.println(p.getId());
 //		}
 	
-		System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new java.util.Date()));
-		org.apache.log4j.LogManager l;
 	}
 }

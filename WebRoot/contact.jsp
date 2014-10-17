@@ -62,12 +62,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					 <a href="" class="visit">visit the shop</a>
 				</div>
 			</div>
-			<form action="#">
+			<form action="user_leaveMsg" method="post">
 				<p>如果您有需要欢迎给我们留言.</p>
-				<input type="text" maxlength="30" value="Name" class="textcontact" onfocus="if (value =='Name'){value ='';}" onblur="if (value ==''){value='Name';}"/>
-				<input type="text" maxlength="30" value="E-mail" class="textcontact" onfocus="if (value =='E-mail'){value ='';}" onblur="if (value ==''){value='E-mail';}"/>
-				<input type="text" maxlength="30" value="Subject" class="textcontact" onfocus="if (value =='Subject'){value ='';}" onblur="if (value ==''){value='Subject';}"/>
-				<textarea name="message" id="message" cols="30" rows="10"></textarea>
+				<input type="text" maxlength="30" name="username" value="Name" autocomplete="off" class="textcontact" onfocus="if (value =='Name'){value ='';}" onblur="if (value ==''){value='Name';}"/>
+				<input type="text" maxlength="30" name="email" value="E-mail"autocomplete="off"  class="textcontact" onfocus="if (value =='E-mail'){value ='';}" onblur="if (value ==''){value='E-mail';}"/>
+				<input type="text" maxlength="30" name="subject" value="Subject"autocomplete="off"  class="textcontact" onfocus="if (value =='Subject'){value ='';}" onblur="if (value ==''){value='Subject';}"/>
+				<textarea name="content" id="content" cols="30" rows="10"></textarea>
 				<input type="submit" value="" class="submit" />
 			</form>
 		</div>
