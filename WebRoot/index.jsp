@@ -32,20 +32,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script type="text/javascript" src="js/jq.snow.js"></script>
 	<script>
 	$(function(){
-		$.fn.snow({ 
+		$.fn.snow({
 			minSize: 5,		//雪花的最小尺寸
 			maxSize: 50, 	//雪花的最大尺寸
 			newOn: 300		//雪花出现的频率 这个数值越小雪花越多
 		});
 	});
 	function changeHomeImg(order) {
-		for(var i=1;i<9;i++){
-			//if($("#homeimage"+i)[0].style.display != 'none'){
-				$("#homeimage"+i).fadeOut(500);
-			//}
+		for(var i=1;i<=9;i++){
+			$("#homeimage"+i).fadeOut(500);
+			$("#imgli"+i).removeClass("selected");
 		}
-		$("#homeimage"+order).fadeIn("slow");
-	} 
+		$("#imgli"+order).addClass("selected");
+		setTimeout(function(){
+			$("#homeimage"+order).fadeIn("slow");
+		},400);
+	}
+	
 </script>
 </head>
 <body>
@@ -78,15 +81,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</ul>
 			<div id="section">
 				<ul>
-					<li><a href="javascript:void(0)" onclick="changeHomeImg('1')">芝士蛋糕</a></li>
-					<li><a href="javascript:void(0)" onclick="changeHomeImg('2')">海绵蛋糕</a></li>
-					<li><a href="javascript:void(0)" onclick="changeHomeImg('3')">奶油蛋糕</a></li>
-					<li class="selected"><a href="javascript:void(0)" onclick="changeHomeImg('4')">层状蛋糕</a></li>
-					<li><a href="javascript:void(0)" onclick="changeHomeImg('5')">片状蛋糕</a></li>
-					<li><a href="javascript:void(0)" onclick="changeHomeImg('6')">杯形状蛋糕</a></li>
-					<li><a href="javascript:void(0)" onclick="changeHomeImg('7')">翻糖蛋糕</a></li>
-					<li><a href="javascript:void(0)" onclick="changeHomeImg('8')">瑞士卷</a></li>
-					<li><a href="javascript:void(0)" onclick="changeHomeImg('9')">其他甜点</a></li>
+					<li id="imgli1"><a href="javascript:void(0)" onclick="changeHomeImg('1')">芝士蛋糕</a></li>
+					<li id="imgli2"><a href="javascript:void(0)" onclick="changeHomeImg('2')">海绵蛋糕</a></li>
+					<li id="imgli3"><a href="javascript:void(0)" onclick="changeHomeImg('3')">奶油蛋糕</a></li>
+					<li class="selected" id="imgli4"><a href="javascript:void(0)" onclick="changeHomeImg('4')">层状蛋糕</a></li>
+					<li id="imgli5"><a href="javascript:void(0)" onclick="changeHomeImg('5')">片状蛋糕</a></li>
+					<li id="imgli6"><a href="javascript:void(0)" onclick="changeHomeImg('6')">杯形状蛋糕</a></li>
+					<li id="imgli7"><a href="javascript:void(0)" onclick="changeHomeImg('7')">翻糖蛋糕</a></li>
+					<li id="imgli8"><a href="javascript:void(0)" onclick="changeHomeImg('8')">瑞士卷</a></li>
+					<li id="imgli9"><a href="javascript:void(0)" onclick="changeHomeImg('9')">其他甜点</a></li>
 				</ul>
 				<a href="index.jsp">
 					<img id="homeimage1" name="homeimage" src="<%=path %>/images/home/home_cheesecake.jpg"style="display: none;"/>
@@ -133,61 +136,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 	</div>
 	<div id="footer">
-		<div class="home">
+		<div class="section">
 			<div>
 				<div class="aside">
-					<div class="signup">
+					<div>
 						<div>
 							<b>Too <span>BUSY</span> to shop?</b>
 							<a href="signin.jsp">Sign up for free</a>
 							<p>and we&#39;ll deliver it on your doorstep</p>
 						</div>
 					</div>
-					<div class="connect">
-						<span>Follow Us</span>
-						<ul>
-							<li><a href="#" target="_blank" class="facebook">Facebook</a></li>
-							<li><a href="#" target="_blank" class="twitter">Twitter</a></li>
-							<li><a href="#" class="subscribe">Subscribe</a></li>
-							<li><a href="http://www.weibo.com/u/1814073407" target="_blank" class="flicker">Weibo</a></li>
-						</ul>
-					</div>
 				</div>
-				<div class="section">
-					<div>
-						<div>
-							<h3><a href="index.jsp">每日惊喜</a></h3>
-							<p>最近看《破产姐妹》深深的爱上MAX，没想到女汉子也喜欢烘焙，哈哈，看到可爱的苏菲那么爱吃MAX做的cupcake，还有白富美凯瑟琳用心经营她与MAX的纸杯蛋糕屋等等，这种感觉真心美好，搞到我都想开一家烘焙店~闲话就不多说了，下面是cupcake海绵蛋糕胚做法以及CUPCAKE奶油霜和挤花~
-								和精致仿佛的法式甜点相比，Cupcake充满着美国式的气氛，简单，自由，充满快乐，Cupcake是美国人生活的一部分，也是最容易操作的甜点~
-							</p>
-						</div>
-					</div>
+				<div class="connect">
+					<span>Follow Us</span>
+					<ul>
+						<li><a href="#" target="_blank" class="facebook">Facebook</a></li>
+						<li><a href="#" target="_blank" class="twitter">Twitter</a></li>
+						<li><a href="#" class="subscribe">Subscribe</a></li>
+						<li><a href="http://www.weibo.com/u/1814073407" target="_blank" class="flicker">Weibo</a></li>
+					</ul>
 				</div>
 			</div>
-		</div>
-		<div id="featured">
-			<ul>
-				<li class="first">
-					<a href="index.jsp"><img src="<%=path %>/images/fruit-cake.jpg" alt="Image" /></a>
-					<h2><a href="index.jsp">Tips on how to preserve</a></h2>
-					<p>Lorem ipsum dolor sit amet, consectetuer adispiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. <a href="index.jsp" class="readmore">read more</a></p>
-				</li>
-				<li>
-					<a href="index.jsp"><img src="<%=path %>/images/italian.jpg" alt="Image" /></a>
-					<h2><a href="index.jsp">Menu of the day: Italian</a></h2>
-					<p>Lorem ipsum dolor sit amet, consectetuer adispiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. <a href="index.jsp" class="readmore">read more</a></p>
-				</li>
-				<li>
-					<a href="index.jsp"><img src="<%=path %>/images/fruit.jpg" alt="Image" /></a>
-					<h2><a href="index.jsp">Fruit menu for your diet</a></h2>
-					<p>Lorem ipsum dolor sit amet, consectetuer adispiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. <a href="index.jsp" class="readmore">read more</a></p>
-				</li>
-				<li>
-					<a href="index.jsp"><img src="<%=path %>/images/desserts.jpg" alt="Image" /></a>
-					<h2><a href="index.jsp">Desserts for every occassion</a></h2>
-					<p>Lorem ipsum dolor sit amet, consectetuer adispiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. <a href="index.jsp" class="readmore">read more</a></p>
-				</li>
-			</ul>
 		</div>
 		<div id="navigation">
 			<div>
