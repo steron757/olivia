@@ -20,7 +20,7 @@ public class UserAction extends BaseAction {
 		return SUCCESS;
 	}
 	
-	public String leaveMsg(){
+	public String leaveMsg() {
 		Message message = new Message();
 		message.setName(username);
 		message.setEmail(email);
@@ -29,8 +29,12 @@ public class UserAction extends BaseAction {
 		boolean result = false;
 		try {
 			result = userDao.addMessage(message);
+			if(result){
+				addActionMessage("您的留言我们已经收到，感谢您的支持");
+			}
 		} catch (Exception e) {
-			e.printStackTrace();	//TODO
+			addActionMessage("留言出了点问题：" + e.getMessage());
+			e.printStackTrace();
 		}
 		System.out.println(result);
 		return "msg";

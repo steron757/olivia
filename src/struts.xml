@@ -24,8 +24,6 @@
 	</package>
 
 	<package name="default" namespace="/" extends="ssh,json-default">
-		<default-action-ref name="" />
-
 		<action name="uploadOne" class="com.olivia.action.UploadImageAction">
 			<!-- 限制图片的格式和图片的大小 -->
 			<interceptor-ref name="fileUpload">
@@ -38,18 +36,19 @@
 			<result name="input">/admin/mgr.jsp</result>
 		</action>
 
-		<action name="subject_*" class="com.olivia.action.SubjectAction" method="{1}">
+		<action name="subject_*" class="com.olivia.action.SubjectAction"
+			method="{1}">
 			<result name="success">/admin/mgr.jsp</result>
 			<result name="input">/admin/mgr.jsp</result>
 			<result name="error">/admin/mgr.jsp</result>
 		</action>
-		
+
 		<action name="user_*" class="com.olivia.action.UserAction" method="{1}">
 			<result name="success">/admin/login.jsp</result>
 			<result name="input">/admin/login.jsp</result>
 			<result name="error">/admin/login.jsp</result>
 			<result name="msg">/contact.jsp</result>
 		</action>
-		
+
 	</package>
 </struts>    
