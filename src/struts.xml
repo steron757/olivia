@@ -19,11 +19,32 @@
 		scope="default" optional="true " />
 	<constant name="struts.multipart.handler" value="myRequestParser" />
 
-	<package name="ssh" extends="struts-default">
+	<package name="ssh" extends="struts-default,json-default,tiles-default">
 		<action name="base" class="com.action.BaseAction" />
 	</package>
-
-	<package name="default" namespace="/" extends="ssh,json-default">
+	
+	<package name="navigate" namespace="/" extends="ssh">
+		<action name="home" class="com.olivia.action.NavigateAction" method="home">
+			<result name="success" type="tiles">home</result>
+		</action>
+		<action name="product" class="com.olivia.action.NavigateAction" method="product">
+			<result name="success" type="tiles">product</result>
+		</action>
+		<action name="about" class="com.olivia.action.NavigateAction" method="about">
+			<result name="success" type="tiles">about</result>
+		</action>
+		<action name="service" class="com.olivia.action.NavigateAction" method="service">
+			<result name="success" type="tiles">service</result>
+		</action>
+		<action name="blog" class="com.olivia.action.NavigateAction" method="blog">
+			<result name="success" type="tiles">blog</result>
+		</action>
+		<action name="contact" class="com.olivia.action.NavigateAction" method="contact">
+			<result name="success" type="tiles">contact</result>
+		</action>
+	</package>
+	
+	<package name="default" namespace="/" extends="ssh">
 		<action name="uploadOne" class="com.olivia.action.UploadImageAction">
 			<!-- 限制图片的格式和图片的大小 -->
 			<interceptor-ref name="fileUpload">
@@ -50,5 +71,8 @@
 			<result name="msg">/contact.jsp</result>
 		</action>
 
+		<action name="test" class="com.olivia.Test">
+			<result name="success" type="tiles">home</result>
+		</action>
 	</package>
 </struts>    

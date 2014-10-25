@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+	"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+	<definition name="base-def" template="/tiles/template.jsp">
+		<put-attribute name="header" value="" />
+		<put-attribute name="main" value="" />
+		<put-attribute name="foot" value="" />
+	</definition>
+
+	<definition name="home" extends="base-def">
+		<put-attribute name="header" value="/tiles/header.jsp" />
+		<put-attribute name="main" value="/index.jsp" />
+		<put-attribute name="foot" value="/tiles/footer.jsp" />
+	</definition>
+
+	<definition name="product" extends="base-def">
+		<put-attribute name="header" value="/tiles/header.jsp" />
+		<put-attribute name="main" value="/product.jsp" />
+		<put-attribute name="foot" value="/tiles/footer.jsp" />
+	</definition>
+
+	<definition name="about" extends="base-def">
+		<put-attribute name="header" value="/tiles/header.jsp" />
+		<put-attribute name="main" value="/about.jsp" />
+		<put-attribute name="foot" value="/tiles/footer.jsp" />
+	</definition>
+
+	<definition name="service" extends="base-def">
+		<put-attribute name="header" value="/tiles/header.jsp" />
+		<put-attribute name="main" value="/services.jsp" />
+		<put-attribute name="foot" value="/tiles/footer.jsp" />
+	</definition>
+
+	<definition name="blog" extends="base-def">
+		<put-attribute name="header" value="/tiles/header.jsp" />
+		<put-attribute name="main" value="/blog.jsp" />
+		<put-attribute name="foot" value="/tiles/footer.jsp" />
+	</definition>
+
+	<definition name="contact" extends="base-def">
+		<put-attribute name="header" value="/tiles/header.jsp" />
+		<put-attribute name="main" value="/contact.jsp" />
+		<put-attribute name="foot" value="/tiles/footer.jsp" />
+	</definition>
+</tiles-definitions>

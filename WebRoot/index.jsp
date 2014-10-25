@@ -54,31 +54,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <body>
 	<div id="header">
 		<div>
-			<div>
-				<div id="logo">
-					<a href="index.jsp"><img src="<%=path %>/images/logo.gif" alt="Logo"/></a>
-				</div>
-				<div>
-					<div>
-						<a href="admin/login.jsp">管理入口</a>
-						<a href="signup.jsp">我的账户</a>
-						<a href="index.jsp">帮助</a>
-						<a href="signin.jsp" class="last">登入</a>
-					</div>
-					<form action="#">
-						<input type="text" id="search" maxlength="30" />
-						<input type="submit" value="" id="searchbtn" />
-					</form>
-				</div>
-			</div>
-			<ul>
-				<li class="current"><a href="index.jsp">首页</a></li>
-				<li><a href="product.jsp">糕点屋</a></li>
-				<li><a href="about.jsp">关于我们</a></li>
-				<li><a href="services.jsp">服务</a></li>
-				<li><a href="blog.jsp">博客</a></li>
-				<li><a href="contact.jsp">联系我们</a></li>
-			</ul>
 			<div id="section">
 				<ul>
 					<li id="imgli1"><a href="javascript:void(0)" onclick="changeHomeImg('1')">芝士蛋糕</a></li>
@@ -132,43 +107,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<a href="index.jsp"><img src="<%=path %>/images/cupcake.jpg" alt="Image" /></a>
 					</li>
 				</ul>
-			</div>
-		</div>
-	</div>
-	<div id="footer">
-		<div class="section">
-			<div>
-				<div class="aside">
-					<div>
-						<div>
-							<b>Too <span>BUSY</span> to shop?</b>
-							<a href="signin.jsp">Sign up for free</a>
-							<p>and we&#39;ll deliver it on your doorstep</p>
-						</div>
-					</div>
-				</div>
-				<div class="connect">
-					<span>Follow Us</span>
-					<ul>
-						<li><a href="#" target="_blank" class="facebook">Facebook</a></li>
-						<li><a href="#" target="_blank" class="twitter">Twitter</a></li>
-						<li><a href="#" class="subscribe">Subscribe</a></li>
-						<li><a href="http://www.weibo.com/u/1814073407" target="_blank" class="flicker">Weibo</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div id="navigation">
-			<div>
-				<ul>
-					<li class="first"><a href="index.jsp">help</a></li>
-					<li><a href="index.jsp">about cake delight</a></li>
-					<li><a href="index.jsp">cake delight talk</a></li>
-					<li><a href="index.jsp">developers</a></li>
-					<li><a href="index.jsp">privacy policy</a></li>
-					<li><a href="index.jsp">terms of use(updated 10/15/08)</a></li>
-				</ul>
-				<p>Copyright &copy; 2006-2008 cake delight  All rights reserved</p>
 			</div>
 		</div>
 	</div>
