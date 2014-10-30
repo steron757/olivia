@@ -20,14 +20,14 @@
 	<constant name="struts.multipart.handler" value="myRequestParser" />
 
 	<package name="ssh" extends="struts-default,json-default,tiles-default">
-		<action name="base" class="com.action.BaseAction" />
+		<action name="base" class="com.olivia.action.BaseAction" />
 	</package>
 	
 	<package name="navigate" namespace="/" extends="ssh">
 		<action name="home" class="com.olivia.action.NavigateAction" method="home">
 			<result name="success" type="tiles">home</result>
 		</action>
-		<action name="product" class="com.olivia.action.NavigateAction" method="product">
+		<action name="products" class="com.olivia.action.NavigateAction" method="product">
 			<result name="success" type="tiles">product</result>
 		</action>
 		<action name="about" class="com.olivia.action.NavigateAction" method="about">
@@ -68,11 +68,17 @@
 			<result name="success">/admin/login.jsp</result>
 			<result name="input">/admin/login.jsp</result>
 			<result name="error">/admin/login.jsp</result>
-			<result name="msg">/contact.jsp</result>
+			<result name="msg" type="tiles">contact</result>
 		</action>
 
 		<action name="test" class="com.olivia.Test">
 			<result name="success" type="tiles">home</result>
+		</action>
+	</package>
+	
+	<package name="product" namespace="/product" extends="ssh">
+		<action name="p" class="com.olivia.action.NavigateAction" method="find">
+			<result name="success" type="tiles">p1</result>
 		</action>
 	</package>
 </struts>    

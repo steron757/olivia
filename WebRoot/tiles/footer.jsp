@@ -15,19 +15,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="aside">
 					<div>
 						<div>
-							<b>Too <span>BUSY</span> to shop?</b>
-							<a href="signin.jsp">Sign up for free</a>
-							<p>and we&#39;ll deliver it on your doorstep</p>
+							<b><span>没有时间</span>逛街？</b>
+							<a href="signin.jsp">免费注册</a>
+							<p>我们会送到您家</p>
 						</div>
 					</div>
 				</div>
 				<div class="connect">
-					<span>Follow Us</span>
+					<span>关注我们</span>
 					<ul>
 						<li><a href="#" target="_blank" class="facebook">Facebook</a></li>
 						<li><a href="#" target="_blank" class="twitter">Twitter</a></li>
 						<li><a href="#" class="subscribe">Subscribe</a></li>
-						<li><a href="http://www.weibo.com/u/1814073407" target="_blank" class="flicker">Weibo</a></li>
+						<li><a href="http://www.weibo.com/u/1814073407" target="_blank" class="flicker">新浪微博</a></li>
 					</ul>
 				</div>
 			</div>
@@ -35,12 +35,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div id="navigation">
 			<div>
 				<ul>
-					<li class="first"><a href="index.jsp">help</a></li>
-					<li><a href="index.jsp">about cake delight</a></li>
-					<li><a href="index.jsp">cake delight talk</a></li>
-					<li><a href="index.jsp">developers</a></li>
-					<li><a href="index.jsp">privacy policy</a></li>
-					<li><a href="index.jsp">terms of use(updated 10/15/08)</a></li>
+					<li class="first"><a href="home">help</a></li>
+					<li><a href="home">about cake delight</a></li>
+					<li><a href="home">cake delight talk</a></li>
+					<li><a href="home">developers</a></li>
+					<li><a href="home">privacy policy</a></li>
+					<li><a href="home">terms of use(updated 10/15/08)</a></li>
 				</ul>
 				<p>Copyright &copy; 2006-2008 cake delight  All rights reserved</p>
 			</div>

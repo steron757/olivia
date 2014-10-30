@@ -12,37 +12,38 @@ public class NavigateAction extends BaseAction {
 
 	public String home() {
 		request.setAttribute("index", "1");
-		System.out.println("Home!!");
 		return SUCCESS;
 	}
 
 	public String product() {
 		request.setAttribute("index", "2");
-		System.out.println("Product!!");
 		return SUCCESS;
 	}
 
 	public String about() {
 		request.setAttribute("index", "3");
-		System.out.println("About!!");
 		return SUCCESS;
 	}
 
 	public String service() {
 		request.setAttribute("index", "4");
-		System.out.println("Service!!");
 		return SUCCESS;
 	}
 
 	public String blog() {
 		request.setAttribute("index", "5");
-		System.out.println("Blog!!");
 		return SUCCESS;
 	}
 
 	public String contact() {
 		request.setAttribute("index", "6");
-		System.out.println("Contact!!");
+		return SUCCESS;
+	}
+	
+	public String find() {
+		
+		
+		request.setAttribute("index", "2");
 		return SUCCESS;
 	}
 }

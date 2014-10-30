@@ -37,6 +37,7 @@ public class UserAction extends BaseAction {
 			e.printStackTrace();
 		}
 		System.out.println(result);
+		request.setAttribute("index", "6");
 		return "msg";
 	}
 

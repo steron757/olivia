@@ -9,22 +9,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 	<meta charset="UTF-8" />
 	<title>糕点屋</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
-	<!--[if IE 8]>
-		<link rel="stylesheet" type="text/css" href="css/ie8.css" />
-	<![endif]-->
-	<!--[if IE 7]>
-		<link rel="stylesheet" type="text/css" href="css/ie7.css" />
-	<![endif]-->
-	<!--[if IE 6]>
-		<link rel="stylesheet" type="text/css" href="css/ie6.css" />
-	<![endif]-->
 </head>
 <body>
 	<div id="header">
 		<div>
 			<div class="section">
-				<a href="index.jsp"><img src="<%=path %>/images/wedding-cupcakes-small.jpg" alt="Image"/></a>
+				<a href="home"><img src="<%=path %>/images/wedding-cupcakes-small.jpg" alt="Image"/></a>
 			</div>
 		</div>
 	</div>
@@ -35,61 +25,61 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<li>
 					<div>
 						<div>
-							<h2><a href="index.jsp">特别点心</a></h2>
-							<p>香浓的欧式巧克力蛋糕，铺上爽滑的奶油，甜而不腻，可谓蛋糕中的经典。</p>
-							<a href="index.jsp" class="view">查看全部</a>
+							<h2><a href="home">特别点心</a></h2>
+							<p>特别点心</p>
+							<a href="product/p" class="view">查看全部</a>
 						</div>
-						<a href="index.jsp"><img src="<%=path %>/images/special-treats.jpg" alt="Image" /></a>
+						<a href="home"><img src="<%=path %>/images/product/p1.png" alt="Image" style="float:right;height:222px"/></a>
 					</div>
 				</li>
 				<li>
 					<div>
 						<div>
-							<h2><a href="index.jsp">草莓拼盘</a></h2>
-							<p>草莓拼盘</p>
-							<a href="index.jsp" class="view">查看全部</a>
+							<h2><a href="home">人物肖像</a></h2>
+							<p>人物肖像</p>
+							<a href="product/p" class="view">查看全部</a>
 						</div>
-						<a href="index.jsp"><img src="<%=path %>/images/tarts.jpg" alt="Image" /></a>
+						<a href="product/p"><img src="<%=path %>/images/product/p2.png" alt="Image" style="float:right;height:222px"/></a>
 					</div>
 				</li>
 				<li>
 					<div>
 						<div>
-							<h2><a href="index.jsp">精制糕点</a></h2>
-							<p>呵呵</p>
-							<a href="index.jsp" class="view">查看全部</a>
+							<h2><a href="home">生日蛋糕</a></h2>
+							<p>生日蛋糕</p>
+							<a href="product/p" class="view">查看全部</a>
 						</div>
-						<a href="index.jsp"><img src="<%=path %>/images/cakes.jpg" alt="Image" /></a>
+						<a href="product/p"><img src="<%=path %>/images/product/p3.png" alt="Image" style="float:right;height:222px"/></a>
 					</div>
 				</li>
 				<li>
 					<div>
 						<div>
-							<h2><a href="index.jsp">小甜点</a></h2>
-							<p>。。。。。</p>
-							<a href="index.jsp" class="view">查看全部</a>
+							<h2><a href="home">包包</a></h2>
+							<p>包包</p>
+							<a href="product/p" class="view">查看全部</a>
 						</div>
-						<a href="index.jsp"><img src="<%=path %>/images/dessert.jpg" alt="Image" /></a>
+						<a href="product/p"><img src="<%=path %>/images/product/p4.png" alt="Image" style="float:right;height:222px"/></a>
 					</div>
 				</li>
 				<li>
 					<div>
 						<div>
-							<h2><a href="index.jsp">油酥面团</a></h2>
-							<p>看上去不错</p>
-							<a href="index.jsp" class="view">查看全部</a>
+							<h2><a href="home">婚庆礼桌</a></h2>
+							<p>婚庆礼桌</p>
+							<a href="product/p" class="view">查看全部</a>
 						</div>
-						<a href="index.jsp"><img src="<%=path %>/images/pastries.jpg" alt="Image" /></a>
+						<a href="product/p"><img src="<%=path %>/images/product/p5.png" alt="Image" style="float:right;height:222px"/></a>
 					</div>
 				</li>
 				<li>
 					<div>
 						<div>
-							<h2><a href="index.jsp">健康食品</a></h2>
-							<p>~~~</p>
-							<a href="index.jsp" class="view">查看全部</a>
+							<h2><a href="home">店长美眉</a></h2>
+							<p>3333</p>
+							<a href="product/p" class="view">查看全部</a>
 						</div>
-						<a href="index.jsp"><img src="<%=path %>/images/healthy-food.jpg" alt="Image" /></a>
+						<a href="product/p"><img src="<%=path %>/images/product/p6.png" alt="Image" style="float:right;height:222px"/></a>
 					</div>
 				</li>
 			</ul>

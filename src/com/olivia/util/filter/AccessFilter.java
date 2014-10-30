@@ -25,8 +25,7 @@ import com.olivia.model.User;
 
 public class AccessFilter implements Filter {
 
-	ApplicationContext ctx = new ClassPathXmlApplicationContext(
-			"applicationContext.xml");
+	ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
 	UserDao udao = (UserDaoImpl) ctx.getBean("userDao");
 
 	@Override
@@ -55,17 +54,15 @@ public class AccessFilter implements Filter {
 		} else {
 			ip = ((HttpServletRequest) request).getHeader("x-forwarded-for");
 		}
-		String time = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
-				.format(new Date());
-		System.out.println("------------------User IP: " + ip + "----, Time:"
-				+ time + "------------");
+		String time = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+		System.out.println("------------------User IP: " + ip + "----, Time:" + time + "------------");
 		User user = new User();
 		user.setIp(ip);
 		String belongcity = null;
 		belongcity = getIPAddress(ip);
 		user.setBelongcity(belongcity);
 		if (!"127.0.0.1".equals(ip)) {
-			udao.insertIP(user);// TODO
+			udao.insertIP(user);
 		}
 	}
 
@@ -85,7 +82,6 @@ public class AccessFilter implements Filter {
 			BufferedReader br = new BufferedReader(isr);
 			while ((str = br.readLine()) != null) {
 				result.append(str);
-				System.out.println(str);
 			}
 			br.close();
 			isr.close();

@@ -9,19 +9,34 @@ String index = String.valueOf(request.getAttribute("index") == null ? 1 : reques
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=GB18030">
+<script type="text/javascript" src="<%=path %>/js/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="<%=path %>/css/style.css" />
+<script type="text/javascript"src="<%=path %>/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="<%=path %>/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="<%=path %>/js/jq.snow.js"></script>
+<%--<script src="<%=path %>/bootstrap/js/bootstrap.min.js"></script>--%>
 <title></title>
+	<!--[if IE 8]>
+		<link rel="stylesheet" type="text/css" href="css/ie8.css" />
+	<![endif]-->
+	<!--[if IE 7]>
+		<link rel="stylesheet" type="text/css" href="css/ie7.css" />
+	<![endif]-->
+	<!--[if IE 6]>
+		<link rel="stylesheet" type="text/css" href="css/ie6.css" />
+	<![endif]-->
 </head>
 <body onload="load('<%=index%>')">
 		<div>
 			<div>
 				<div id="logo">
-					<a href="index.jsp"><img src="<%=path %>/images/logo.gif" alt="Logo"/></a>
+					<a href="home"><img src="<%=path %>/images/logo.gif" alt="Logo"/></a>
 				</div>
 				<div>
 					<div>
 						<a href="admin/login.jsp">管理入口</a>
 						<a href="signup.jsp">我的账户</a>
-						<a href="index.jsp">帮助</a>
+						<a href="home">帮助</a>
 						<a href="signin.jsp" class="last">登入</a>
 					</div>
 					<form action="#">
@@ -32,7 +47,7 @@ String index = String.valueOf(request.getAttribute("index") == null ? 1 : reques
 			</div>
 			<ul>
 				<li id="nav1" class="current"><a href="home">首页</a></li>
-				<li id="nav2"><a href="product">糕点屋</a></li>
+				<li id="nav2"><a href="products">糕点屋</a></li>
 				<li id="nav3"><a href="about">关于我们</a></li>
 				<li id="nav4"><a href="service">服务</a></li>
 				<li id="nav5"><a href="blog">博客</a></li>

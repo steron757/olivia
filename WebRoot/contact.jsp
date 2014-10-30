@@ -9,31 +9,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <html>
 <head>
-	<meta charset="UTF-8" />
-	<title>Contact Us - Cake Delights Web Template</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
-	<!--[if IE 8]>
-		<link rel="stylesheet" type="text/css" href="css/ie8.css" />
-	<![endif]-->
-	<!--[if IE 7]>
-		<link rel="stylesheet" type="text/css" href="css/ie7.css" />
-	<![endif]-->
-	<!--[if IE 6]>
-		<link rel="stylesheet" type="text/css" href="css/ie6.css" />
-	<![endif]-->
-	
-<script type="text/javascript" src="<%=path %>/js/jquery.min.js"></script>
-<link rel="stylesheet" href="<%=path %>/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="<%=path %>/bootstrap/css/bootstrap-theme.min.css">
-<script src="<%=path %>/bootstrap/js/bootstrap.js"></script>
-<%--<script src="<%=path %>/bootstrap/js/bootstrap.min.js"></script>--%>
-
+<meta charset="UTF-8" />
+<title>Contact Us - Cake Delights Web Template</title>
 </head>
 <body>
 	<div id="header">
 		<div>
 			<div class="section">
-				<a href="index.jsp"><img src="<%=path %>/images/wedding-cupcakes-small.jpg" alt="Image"></a>
+				<a href="home"><img src="<%=path %>/images/wedding-cupcakes-small.jpg" alt="Image"></a>
 			</div>
 		</div>
 	</div>
