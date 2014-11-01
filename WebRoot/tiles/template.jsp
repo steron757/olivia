@@ -14,7 +14,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=GB18030">
 <title>Cake Delights Web Template</title>
-<link rel="stylesheet" type="text/css" href="css/style.css" />
 <!--[if IE 8]>
 		<link rel="stylesheet" type="text/css" href="css/ie8.css" />
 	<![endif]-->
@@ -31,9 +30,6 @@
 <meta http-equiv="expires" content="0">
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
-<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
 <script type="text/javascript" src="<%=path%>/js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="<%=path%>/js/jq.snow.js"></script>
 </head>

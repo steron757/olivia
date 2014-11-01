@@ -29,7 +29,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<p>特别点心</p>
 							<a href="product/p" class="view">查看全部</a>
 						</div>
-						<a href="home"><img src="<%=path %>/images/product/p1.png" alt="Image" style="float:right;height:222px"/></a>
+						<a href="product/p"><img src="<%=path %>/images/product/p1.png" alt="Image" style="float:right;height:222px"/></a>
 					</div>
 				</li>
 				<li>

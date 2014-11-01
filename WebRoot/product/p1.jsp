@@ -9,12 +9,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <style type="text/css">
 </style>
 <title></title>
-        <link rel="stylesheet" type="text/css" href="<%=path %>/css/carousel/demo.css" />
-		<link rel="stylesheet" type="text/css" href="<%=path %>/css/carousel/style.css" />
-		<link rel="stylesheet" type="text/css" href="<%=path %>/css/carousel/jquery.jscrollpane.css" media="all" />
-		<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow&v1' rel='stylesheet' type='text/css' />
-		<link href='http://fonts.googleapis.com/css?family=Coustard:900' rel='stylesheet' type='text/css' />
-		<link href='http://fonts.googleapis.com/css?family=Rochester' rel='stylesheet' type='text/css' />
+<link rel="stylesheet" type="text/css" href="<%=path%>/css/carousel/demo.css" />
+<link rel="stylesheet" type="text/css" href="<%=path%>/css/carousel/style.css" />
+<link rel="stylesheet" type="text/css" href="<%=path%>/css/carousel/jquery.jscrollpane.css" media="all" />
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow&v1' rel='stylesheet' type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=Coustard:900' rel='stylesheet' type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=Rochester' rel='stylesheet' type='text/css' />
+
 </head>
 <body>
 	<div id="header">
@@ -31,7 +32,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="ca-item ca-item-1">
 						<div class="ca-item-main">
 							<div class="ca-icon"></div>
-							<h3>Stop factory farming</h3>
 							<h4>
 								<span class="ca-quote">&ldquo;</span>
 								<span>The greatness of a nation and its moral progress can be judged by the way in which its animals are treated.</span>
@@ -59,7 +59,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="ca-item ca-item-2">
 						<div class="ca-item-main">
 							<div class="ca-icon"></div>
-							<h3>Respect Life &amp; Rights</h3>
 							<h4>
 								<span class="ca-quote">&ldquo;</span>
 								<span>I hold that the more helpless a creature, the more entitled it is to protection by man from the cruelty of man.</span>
@@ -87,7 +86,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="ca-item ca-item-3">
 						<div class="ca-item-main">
 							<div class="ca-icon"></div>
-							<h3>Become 100% meat-free</h3>
 							<h4>
 								<span class="ca-quote">&ldquo;</span>
 								<span>I feel that spiritual progress does demand at some stage that we should cease to kill our fellow creatures for the satisfaction of our bodily wants.</span>
@@ -115,7 +113,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="ca-item ca-item-4">
 						<div class="ca-item-main">
 							<div class="ca-icon"></div>
-							<h3>Make a difference</h3>
 							<h4>
 								<span class="ca-quote">&ldquo;</span>
 								<span>A man is but the product of his thoughts what he thinks, he becomes.</span>
@@ -143,7 +140,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="ca-item ca-item-5">
 						<div class="ca-item-main">
 							<div class="ca-icon"></div>
-							<h3>Say no to killing</h3>
 							<h4>
 								<span class="ca-quote">&ldquo;</span>
 								<span>A weak man is just by accident. A strong but non-violent man is unjust by accident.</span>
@@ -171,7 +167,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="ca-item ca-item-6">
 						<div class="ca-item-main">
 							<div class="ca-icon"></div>
-							<h3>Don't believe the lies</h3>
 							<h4>
 								<span class="ca-quote">&ldquo;</span>
 								<span>An error does not become truth by reason of multiplied propagation, nor does truth become error because nobody sees it.</span>
@@ -263,6 +258,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<script type="text/javascript" src="<%=path %>/js/jquery.contentcarousel.js"></script>
 		<script type="text/javascript">
 			$('#ca-container').contentcarousel();
+			
+			var size = $(".ca-item").length;
+			if(size != 0) {
+				for(var i=0;i<size;i++){
+					$(".ca-item")[i].childNodes[1].childNodes[1].innerHTML = 
+						"<img style='width:280px' src='<%=path%>/images/product/p1/p1"+i+".jpg'/>";
+				}
+			};
 		</script>
 </body>
 </html>
