@@ -16,24 +16,24 @@
 <!-- 		<location>/error404.jsp</location> -->
 <!-- 	</error-page> -->
 
-	<filter>
-		<filter-name>AccessFilter</filter-name>
-		<filter-class>com.olivia.util.filter.AccessFilter</filter-class>
-		<init-param>
-			<param-name>encoding</param-name>
-			<param-value>GBK</param-value>
-		</init-param>
-	</filter>
+ 	<filter>
+ 		<filter-name>AccessFilter</filter-name>
+ 		<filter-class>com.olivia.util.filter.AccessFilter</filter-class>
+ 		<init-param>
+ 			<param-name>encoding</param-name>
+ 			<param-value>GBK</param-value>
+ 		</init-param>
+ 	</filter>
 
-	<filter-mapping>
-		<filter-name>AccessFilter</filter-name>
-		<url-pattern>/*</url-pattern><!-- 无后缀的struts请求 -->
-	</filter-mapping>
+ 	<filter-mapping>
+ 		<filter-name>AccessFilter</filter-name>
+ 		<url-pattern>/*</url-pattern><!-- 无后缀的struts请求 -->
+ 	</filter-mapping>
 
-	<filter-mapping>
-		<filter-name>AccessFilter</filter-name>
-		<url-pattern>/servlet/*</url-pattern>
-	</filter-mapping>
+ 	<filter-mapping>
+ 		<filter-name>AccessFilter</filter-name>
+ 		<url-pattern>/servlet/*</url-pattern>
+ 	</filter-mapping>
 
 	<!-- 加载spring容器 -->
 	<context-param>

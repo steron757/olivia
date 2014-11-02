@@ -5,19 +5,27 @@
 <sqlMap namespace="product">
 
 	<resultMap id="ProductMap" class="com.olivia.model.Product">
-		<result property="id" column="id" jdbcType="INT" />
-		<result property="brand" column="brand" jdbcType="VARCHAR" />
-		<result property="model" column="model" jdbcType="VARCHAR" />
-		<result property="price" column="price" jdbcType="VARCHAR" />
-		<result property="link" column="link" jdbcType="VARCHAR" />
-		<result property="description" column="description" jdbcType="VARCHAR" />
-		<result property="retailer" column="retailer" jdbcType="VARCHAR" />
+		<result property="id" column="id" jdbcType="VARCHAR" />
+		<result property="title" column="title" jdbcType="VARCHAR" />
+		<result property="introduction" column="introduction" jdbcType="VARCHAR" />
+		<result property="cover" column="cover" jdbcType="VARCHAR" />
 		<result property="createDate" column="create_date" jdbcType="VARCHAR" />
-		<result property="image" column="image" jdbcType="VARCHAR" />
-		<result property="productType" column="producttype" jdbcType="VARCHAR" />
 	</resultMap>
-
+	
+	<resultMap id="ImageMap" class="com.olivia.model.Image">
+		<result property="id" column="id" jdbcType="VARCHAR" />
+		<result property="productId" column="product_id" jdbcType="VARCHAR" />
+		<result property="briefDescription" column="brief_description" jdbcType="VARCHAR" />
+		<result property="description" column="description" jdbcType="VARCHAR" />
+		<result property="path" column="path" jdbcType="VARCHAR" />
+	</resultMap>
+	
 	<select id="getProducts" resultMap="ProductMap">
-		select id,producttype,brand,model,price,link,description,retailer,create_date,image from product
+		SELECT ID,TITLE,INTRODUCTION,COVER,CREATE_DATE FROM T_PRODUCT ORDER BY ID DESC
+	</select>
+	
+	<select id="getImages" resultMap="ImageMap" parameterClass="java.lang.String">
+		SELECT T.ID,T.PRODUCT_ID,T.BRIEF_DESCRIPTION,T.DESCRIPTION,T.PATH 
+			FROM t_image T WHERE T.PRODUCT_ID = #productid:VARCHAR#
 	</select>
 </sqlMap>

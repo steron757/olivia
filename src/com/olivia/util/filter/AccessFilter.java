@@ -5,8 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -54,16 +52,14 @@ public class AccessFilter implements Filter {
 		} else {
 			ip = ((HttpServletRequest) request).getHeader("x-forwarded-for");
 		}
-		String time = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
-		System.out.println("------------------User IP: " + ip + "----, Time:" + time + "------------");
 		User user = new User();
 		user.setIp(ip);
 		String belongcity = null;
+		if("59.148.227.179".equals(ip) || "127.0.0.1".equals(ip))
+			return;
 		belongcity = getIPAddress(ip);
 		user.setBelongcity(belongcity);
-		if (!"127.0.0.1".equals(ip)) {
-			udao.insertIP(user);
-		}
+		udao.insertIP(user);
 	}
 
 	private String getIPAddress(String ip){

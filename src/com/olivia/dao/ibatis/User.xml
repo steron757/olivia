@@ -10,18 +10,18 @@
 	</resultMap>
 
 	<select id="getUsers" resultMap="UserMap">
-		select id,name from T_USERS
+		SELECT ID,NAME FROM T_USERS
 	</select>
 
 	<insert id="insertIP" parameterClass="com.olivia.model.User">
-		insert into access(ip,time,city) values(#ip:VARCHAR#,NOW(),#belongcity:VARCHAR#)
+		INSERT INTO T_ACCESS(IP,TIME,CITY) VALUES(#ip: VARCHAR#,NOW(),#belongcity:VARCHAR#)
 	</insert>
 
 	<insert id="insertMessage" parameterClass="com.olivia.model.Message">
-		insert into message(name,email,subject,content,time) value
-		(#name:VARCHAR#,#email:VARCHAR#,#subject:VARCHAR#,#content:VARCHAR#,NOW())
+		INSERT INTO T_MESSAGE(NAME,EMAIL,SUBJECT,CONTENT,TIME) VALUE
+		(#name: VARCHAR#,#email: VARCHAR#,#subject:VARCHAR#,#content:VARCHAR#,NOW())
 		<selectKey resultClass="java.lang.String" keyProperty="id">
-			select last_insert_id() as id
+			SELECT LAST_INSERT_ID() AS ID
 		</selectKey>
 	</insert>
 

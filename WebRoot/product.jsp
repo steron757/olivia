@@ -27,9 +27,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div>
 							<h2><a href="home">特别点心</a></h2>
 							<p>特别点心</p>
-							<a href="product/p" class="view">查看全部</a>
+							<a href="product/p?pid=00001" class="view">查看全部</a>
 						</div>
-						<a href="product/p"><img src="<%=path %>/images/product/p1.png" alt="Image" style="float:right;height:222px"/></a>
+						<a href="product/p?pid=00001"><img src="<%=path %>/images/product/p1.png" alt="Image" style="float:right;height:222px"/></a>
 					</div>
 				</li>
 				<li>
@@ -37,9 +37,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div>
 							<h2><a href="home">人物肖像</a></h2>
 							<p>人物肖像</p>
-							<a href="product/p" class="view">查看全部</a>
+							<a href="product/p?pid=00002" class="view">查看全部</a>
 						</div>
-						<a href="product/p"><img src="<%=path %>/images/product/p2.png" alt="Image" style="float:right;height:222px"/></a>
+						<a href="product/p?pid=00002"><img src="<%=path %>/images/product/p2.png" alt="Image" style="float:right;height:222px"/></a>
 					</div>
 				</li>
 				<li>
@@ -47,19 +47,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div>
 							<h2><a href="home">生日蛋糕</a></h2>
 							<p>生日蛋糕</p>
-							<a href="product/p" class="view">查看全部</a>
+							<a href="product/p?pid=00003" class="view">查看全部</a>
 						</div>
-						<a href="product/p"><img src="<%=path %>/images/product/p3.png" alt="Image" style="float:right;height:222px"/></a>
+						<a href="product/p?pid=00003"><img src="<%=path %>/images/product/p3.png" alt="Image" style="float:right;height:222px"/></a>
 					</div>
 				</li>
 				<li>
 					<div>
 						<div>
-							<h2><a href="home">包包</a></h2>
-							<p>包包</p>
-							<a href="product/p" class="view">查看全部</a>
+							<h2><a href="home">手艺</a></h2>
+							<p>手艺</p>
+							<a href="product/p?pid=00004" class="view">查看全部</a>
 						</div>
-						<a href="product/p"><img src="<%=path %>/images/product/p4.png" alt="Image" style="float:right;height:222px"/></a>
+						<a href="product/p?pid=00004"><img src="<%=path %>/images/product/p4.png" alt="Image" style="float:right;height:222px"/></a>
 					</div>
 				</li>
 				<li>
@@ -67,9 +67,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div>
 							<h2><a href="home">婚庆礼桌</a></h2>
 							<p>婚庆礼桌</p>
-							<a href="product/p" class="view">查看全部</a>
+							<a href="product/p?pid=00005" class="view">查看全部</a>
 						</div>
-						<a href="product/p"><img src="<%=path %>/images/product/p5.png" alt="Image" style="float:right;height:222px"/></a>
+						<a href="product/p?pid=00005"><img src="<%=path %>/images/product/p5.png" alt="Image" style="float:right;height:222px"/></a>
 					</div>
 				</li>
 				<li>
@@ -77,9 +77,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div>
 							<h2><a href="home">店长美眉</a></h2>
 							<p>3333</p>
-							<a href="product/p" class="view">查看全部</a>
+							<a href="product/p?pid=00006" class="view">查看全部</a>
 						</div>
-						<a href="product/p"><img src="<%=path %>/images/product/p6.png" alt="Image" style="float:right;height:222px"/></a>
+						<a href="product/p?pid=00006"><img src="<%=path %>/images/product/p6.png" alt="Image" style="float:right;height:222px"/></a>
 					</div>
 				</li>
 			</ul>
