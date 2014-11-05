@@ -21,16 +21,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div id="content">
 		<div id="about">
 			<div class="aside">
-				<h1>About Cake Delights</h1>
-				<span>We Have Free Templates for Everyone</span>
-				<p>Our website templates are created with inspiration, checked for quality and originality and meticulously sliced and coded. What's more, they're absolutely free! You can do a lot with them. You can modify them. You can use them to design websites for clients, so long as you agree with the Terms of Use. You can even remove all our links if you want to.</p>
-				<span>We Have Free Templates for Everyone</span>
-				<p>Looking for more templates? Just browse through all our <a href="http://www.cssmoban.com/" title="æ¨¡æ¿ä¹å®¶">æ¨¡æ¿ä¹å®¶</a> and find what you're looking for. But if you don't find any website template you can use, you can try our Free Web Design service and tell us all about it. Maybe you're looking for something different, something special. And we love the challenge of doing something different and something special.</p>
-				<span>Be Part of Our Community</span>
-				<p>If you're experiencing issues and concerns about this website template, join the discussion on our forum and meet other people in the community who share the same interests with you.</p>
-				<span>Template details</span>
-				<p>Version 14<br />Website Template details, discussion and updates for this <a href="#discuss/cakewebsitetemplate/">Cake Website Template</a>. <br />
-				Website Template design by <a href="http://www.cssmoban.com/" title="æ¨¡æ¿ä¹å®¶">æ¨¡æ¿ä¹å®¶</a>. <br />Please feel free to remove some or all the text and links of this page and replace it with your own About content.</p>
+				<h1>About Olivia Cupcake</h1>
+				<span>XXXXXX</span>
+				<p></p>
+				<span>XXXXXXXX</span>
+				<p></p>
+				<span>XXXXX</span>
+				<p></p>
+				<span>XXXXXXX</span>
+				<p></p>
+				<p></p>
 			</div>
 			<div class="section">
 				<div id="visitshop">
@@ -40,15 +40,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div>
 				</div>
 				<div>
-					<h3>Please read</h3>
-					<p>This website template has been collect from <a href="http://www.cssmoban.com/" title="æ¨¡æ¿ä¹å®¶">æ¨¡æ¿ä¹å®¶</a> for you, for free. You can replace all this text with your own text. You can remove any link to our website from this website template, you're free to use this website template without linking back to us. If you're having problems editing this website template, then don't hesitate to ask for help on the Forum.</p>
+					<h3></h3>
+					<p></p>
 				</div>
 				<div>
-					<h3>Address</h3>
-					<p>18th Floor, Lorem ipsum dolor <br /> Adipiscing Bldg., Quisque vestibulum Avenue <br /> Samar Loop St., Businees Park <br />Quisque vestibulum, 6029 <br />Lorem, Ipsum Dolor</p>
-				</div>
+					<h3>地址</h3>
+					<p>广东省广州市白云区白云大道北1号</p>
+					</div>
 				<div>
-					<a href="home" class="callus">CALL US <span>1-800-4216243</span></a>
+					<a href="home" class="callus">联系我们<span>119</span></a>
 				</div>
 			</div>
 		</div>

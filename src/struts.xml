@@ -78,7 +78,7 @@
 	
 	<package name="product" namespace="/product" extends="ssh">
 		<action name="p" class="com.olivia.action.ProductAction" method="productDetail">
-			<result name="success" type="tiles">p1</result>
+			<result name="success" type="tiles">pdetail</result>
 		</action>
 	</package>
 </struts>    

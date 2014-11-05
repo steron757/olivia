@@ -46,9 +46,9 @@
 		<put-attribute name="foot" value="/tiles/footer.jsp" />
 	</definition>
 
-	<definition name="p1" extends="base-def">
+	<definition name="pdetail" extends="base-def">
 		<put-attribute name="header" value="/tiles/header.jsp" />
-		<put-attribute name="main" value="/product/p1.jsp" />
+		<put-attribute name="main" value="/pdetail.jsp" />
 		<put-attribute name="foot" value="/tiles/footer.jsp" />
 	</definition>
 	

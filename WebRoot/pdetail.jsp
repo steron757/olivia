@@ -28,8 +28,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 	</div>
 		<div class="container">
-			<h1>Circular Content Carousel
-			<span>with jQuery</span>
+			<h1>Olivia Cakes
+			<span></span>
 				<img style='width: 40px;float: right;margin-right: 170px;cursor: pointer;' 
 					title="返回" src='<%=path%>/images/back.png' onclick="javascript:history.go(-1)"/>
 			</h1>
@@ -66,7 +66,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</s:iterator>
 				</div>
 			</div>
-			<h5>Quotes by Mohandas Gandhi</h5>
+			<h5>The Best Choice</h5>
 		</div>
 		<script type="text/javascript" src="<%=path %>/js/jquery.easing.1.3.js"></script>
 		<!-- the jScrollPane script -->
