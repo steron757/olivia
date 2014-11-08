@@ -12,4 +12,6 @@ public interface ImageDao {
 
 	public List<Image> selectImage(Image img) throws Exception;
 
+	public int deleteImage(String id) throws Exception;
+
 }

@@ -1,14 +1,17 @@
 package com.olivia.action;
 
+import java.io.File;
 import java.util.List;
 
 import com.olivia.dao.ImageDao;
 import com.olivia.model.Image;
+import com.olivia.util.StringUtil;
 
 public class ImageAction extends BaseAction {
 	private static final long serialVersionUID = 2661815095968226287L;
 
 	private String id;
+	private String pid;
 	private String briefDescription;
 	private String description;
 	private List<Image> imageList;
@@ -18,7 +21,7 @@ public class ImageAction extends BaseAction {
 
 	public String tomdf() {
 		try {
-			setImageList(imageDao.selectImage(id));
+			setImageList(imageDao.selectImage(pid));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -58,7 +61,45 @@ public class ImageAction extends BaseAction {
 		}
 		return null;
 	}
-
+	
+	public String deleteImage(){
+		if(StringUtil.isEmpty(id)){
+			response(false, "id is null");
+			return null;
+		}
+		String[] idList = id.split(",");
+		for(String t : idList) {
+			Image img = new Image();
+			img.setId(t);
+			List<Image> tmp;
+			try {
+				tmp = imageDao.selectImage(img);
+				if(tmp.size() > 0){
+					img = tmp.get(0);
+				}
+				//Delete records
+				int result = imageDao.deleteImage(t);
+				if(result > 0){
+					response(true, "");
+					return null;
+				}
+			} catch (Exception e) {
+				response(false, e.getMessage());
+				e.printStackTrace();
+				return null;
+			}
+			//Delete images
+			String path = request.getSession().getServletContext().getRealPath("") + "\\" + img.getPath();
+			File file = new File(path);
+			boolean filedelete = false;
+			if (file.exists()){
+				filedelete = file.delete();
+			}
+			System.out.println("File delete result: " + filedelete);
+		}
+		return null;
+	}
+	
 	public ImageDao getImageDao() {
 		return imageDao;
 	}
@@ -71,7 +112,7 @@ public class ImageAction extends BaseAction {
 		return id;
 	}
 
-	public void setPid(String id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -105,6 +146,14 @@ public class ImageAction extends BaseAction {
 
 	public void setColumn(String column) {
 		this.column = column;
+	}
+
+	public String getPid() {
+		return pid;
+	}
+
+	public void setPid(String pid) {
+		this.pid = pid;
 	}
 
 }

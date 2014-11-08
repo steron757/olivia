@@ -34,4 +34,9 @@ public class ImageDaoImpl implements ImageDao {
 	public int modifyImage(Image img) throws Exception{
 		return getSqlMapClientTemplate().update("modifyImage", img);
 	}
+
+	@Override
+	public int deleteImage(String id) throws Exception{
+		return getSqlMapClientTemplate().delete("deleteImage", id);
+	}
 }

@@ -38,10 +38,21 @@
 	<table>
 		<thead>
 			<tr><td>图片</td><td>简介</td><td>描述</td></tr>
+			<tr>
+				<td>
+					<input type="button" value="全选" onclick="selectAll()"/>
+					<input type="button" value="全不选" onclick="clearAll()"/>
+					<input type="button" value="删除" id="delBtn"/>
+					<input type="button" value="新增"/>
+				</td>
+			</tr>
 		</thead>
 		<s:iterator var="img" value="#request.imageList">
-			<tr>
-				<td><img style='width:280px' src='<%=path%>/<s:property value="#img.path"/>' /><br /></td>
+			<tr id="tr<s:property value="#img.id"/>">
+				<td>
+					<input type="checkbox" name="deleteImg" value="<s:property value="#img.id"/>">
+					<img style='width:280px' src='<%=path%>/<s:property value="#img.path"/>' /><br />
+				</td>
 				<td>
 					<input type="hidden" value="<s:property value="#img.id" />"/>
 					<span><s:property value="#img.briefDescription" /></span><br />
@@ -61,6 +72,18 @@
 	</table>
 </body>
 <script type="text/javascript">
+function selectAll(){
+	var checks = document.getElementsByName('deleteImg');
+	for(var i=0;i<checks.length;i++){
+		checks[i].checked="checked";
+	}
+}
+function clearAll(){
+	var checks = document.getElementsByName('deleteImg');
+	for(var i=0;i<checks.length;i++){
+		checks[i].checked=false;
+	}
+}
 function showmfd(id){
 	var t = $("#bd"+id);
 	var s1 = $("#s1"+id);
@@ -93,6 +116,7 @@ $(document).ready(function() {
 		});
 		e.preventDefault();
 	});
+	
 	var submit2 = $("input[name='submit2']");
 	submit2.bind("click",function(e) {
 		var formURL = "product/img_modifyImageInfo";
@@ -110,6 +134,27 @@ $(document).ready(function() {
 			}
 		});
 		e.preventDefault();
+	});
+
+	var delBtn = $("#delBtn");
+	delBtn.bind("click", function(e) {
+		var idList = "";
+		var formURL = "product/img_deleteImage";
+		$("input[type=checkbox]:checked").each(function() {
+			idList += $(this).val() + ',';
+		});
+		if(idList.length == 0) 
+			return;
+		$.ajax({
+			url : formURL, type : "POST",
+			data : { id: idList },
+			success : function(data, textStatus, jqXHR) {
+				window.location.reload();
+			},
+			error : function(jqXHR, textStatus, errorThrown) {
+				alert("Error:" + jqXHR);
+			}
+		});
 	});
 });
 </script>

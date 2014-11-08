@@ -29,4 +29,8 @@
 		UPDATE T_IMAGE SET BRIEF_DESCRIPTION=#briefDescription:VARCHAR#,DESCRIPTION=#description:VARCHAR#
 			WHERE ID=#id:VARCHAR#
 	</update>
+	
+	<delete id="deleteImage" parameterClass="java.lang.String">
+		DELETE FROM T_IMAGE WHERE ID=#id:VARCHAR#
+	</delete>
 </sqlMap>
