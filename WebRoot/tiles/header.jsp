@@ -34,7 +34,7 @@ String index = String.valueOf(request.getAttribute("index") == null ? 1 : reques
 				</div>
 				<div>
 					<div>
-						<a href="admin/login.jsp">管理入口</a>
+						<a href="admin/login.jsp" target="blank">管理入口</a>
 						<a href="signup.jsp">我的账户</a>
 						<a href="home">帮助</a>
 						<a href="signin.jsp" class="last">登入</a>

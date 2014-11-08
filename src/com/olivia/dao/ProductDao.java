@@ -2,13 +2,14 @@ package com.olivia.dao;
 
 import java.util.List;
 
-import com.olivia.model.Image;
 import com.olivia.model.Product;
 
 
 public interface ProductDao extends BaseDao {
 
-	public List<Product> selectProduct();
+	public List<Product> selectProduct() throws Exception;
 	
-	public List<Image> selectImage(String productid);
+	public int updateProduct(Product p) throws Exception;
+
+	public List<Product> selectProduct(Product p) throws Exception;
 }

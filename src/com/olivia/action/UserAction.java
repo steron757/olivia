@@ -1,7 +1,11 @@
 package com.olivia.action;
 
+import java.util.List;
+
+import com.olivia.dao.ProductDao;
 import com.olivia.dao.UserDao;
 import com.olivia.model.Message;
+import com.olivia.model.Product;
 
 public class UserAction extends BaseAction {
 	private static final long serialVersionUID = 1L;
@@ -14,10 +18,21 @@ public class UserAction extends BaseAction {
 	private String time;
 	
 	private UserDao userDao;
+	private ProductDao productDao;
+	
+	private List<Product> productList;
 	
 	public String login() {
 		System.out.println(username + "," + password);
-		return SUCCESS;
+		if("luwei".equals(username) && "".equals(password)){
+			try {
+				productList = productDao.selectProduct();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return "productMgr";
+		}
+		return LOGIN;
 	}
 	
 	public String leaveMsg() {
@@ -95,6 +110,22 @@ public class UserAction extends BaseAction {
 
 	public void setUserDao(UserDao userDao) {
 		this.userDao = userDao;
+	}
+
+	public ProductDao getProductDao() {
+		return productDao;
+	}
+
+	public void setProductDao(ProductDao productDao) {
+		this.productDao = productDao;
+	}
+
+	public List<Product> getProductList() {
+		return productList;
+	}
+
+	public void setProductList(List<Product> productList) {
+		this.productList = productList;
 	}
 
 }

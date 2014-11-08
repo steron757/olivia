@@ -13,6 +13,7 @@ public class Product {
 	private String introduction;
 	private String cover;
 	private String createDate;
+	private String link;
 
 	public String getId() {
 		return id;
@@ -52,6 +53,14 @@ public class Product {
 
 	public void setCreateDate(String createDate) {
 		this.createDate = createDate;
+	}
+
+	public String getLink() {
+		return link;
+	}
+
+	public void setLink(String link) {
+		this.link = link;
 	}
 
 }

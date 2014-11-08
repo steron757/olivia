@@ -2,7 +2,7 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 
-	<constant name="struts.devMode" value="true" /> <!--development mode set -->
+	<constant name="struts.devMode" value="true" /><!--development mode set -->
 	<constant name="struts.action.extension" value="action,,do" /> <!--development mode set -->
 	<!--struts标签去除样式 -->
 	<constant name="struts.ui.theme" value="simple" />
@@ -57,16 +57,16 @@
 			<result name="input">/admin/mgr.jsp</result>
 		</action>
 
-		<action name="subject_*" class="com.olivia.action.SubjectAction"
-			method="{1}">
+		<action name="subject_*" class="com.olivia.action.SubjectAction" method="{1}">
 			<result name="success">/admin/mgr.jsp</result>
 			<result name="input">/admin/mgr.jsp</result>
 			<result name="error">/admin/mgr.jsp</result>
 		</action>
 
 		<action name="user_*" class="com.olivia.action.UserAction" method="{1}">
-			<result name="success">/admin/login.jsp</result>
-			<result name="input">/admin/login.jsp</result>
+			<result name="login">/admin/login.jsp</result>
+			<result name="mgr">/admin/mgr.jsp</result>
+			<result name="productMgr">/admin/productmgr.jsp</result>
 			<result name="error">/admin/login.jsp</result>
 			<result name="msg" type="tiles">contact</result>
 		</action>
@@ -77,8 +77,14 @@
 	</package>
 	
 	<package name="product" namespace="/product" extends="ssh">
+		<action name="img_*" class="com.olivia.action.ImageAction" method="{1}">
+			<result name="viewimage">/admin/imagemgr.jsp</result>
+		</action>
 		<action name="p" class="com.olivia.action.ProductAction" method="productDetail">
 			<result name="success" type="tiles">pdetail</result>
+		</action>
+		<action name="mdfp" class="com.olivia.action.ProductAction" method="modifyProductInfo">
+			<result name="success" type="json"></result>
 		</action>
 	</package>
 </struts>    

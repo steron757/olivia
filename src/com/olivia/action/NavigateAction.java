@@ -25,7 +25,11 @@ public class NavigateAction extends BaseAction {
 	}
 
 	public String product() {
-//		productList = productDao.selectProduct();
+		try {
+			productList = productDao.selectProduct();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		request.setAttribute("index", "2");
 		return SUCCESS;
 	}

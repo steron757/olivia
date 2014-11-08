@@ -10,7 +10,7 @@ public interface UserDao extends BaseDao {
 	
 	public List<?> selectProduct();
 	
-	public boolean insertIP(User user);
+	public boolean insertIP(User user) throws Exception;
 	
-	public boolean addMessage(Message message);
+	public boolean addMessage(Message message) throws Exception;
 }

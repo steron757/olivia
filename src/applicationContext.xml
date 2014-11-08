@@ -47,5 +47,8 @@
 	<bean id="userDao" class="com.olivia.dao.impl.UserDaoImpl">
 		<property name="sqlMapClientTemplate" ref="sqlMapClientTemplate" />
 	</bean>
+	<bean id="imageDao" class="com.olivia.dao.impl.ImageDaoImpl">
+		<property name="sqlMapClientTemplate" ref="sqlMapClientTemplate" />
+	</bean>
 	
 </beans>

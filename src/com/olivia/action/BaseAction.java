@@ -1,5 +1,7 @@
 package com.olivia.action;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -25,6 +27,22 @@ public class BaseAction extends ActionSupport implements ServletRequestAware, Se
 
 	private ProductDao productDao;
 
+	public void response(boolean result, String msg) {
+		if (result) {
+			response.setStatus(HttpServletResponse.SC_ACCEPTED);
+		} else {
+			response.setStatus(HttpServletResponse.SC_EXPECTATION_FAILED);
+		}
+		PrintWriter out;
+		try {
+			out = response.getWriter();
+			out.write(msg);
+			out.flush();
+			out.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 	@Override
 	public void setServletRequest(HttpServletRequest arg0) {
 		this.request = arg0;

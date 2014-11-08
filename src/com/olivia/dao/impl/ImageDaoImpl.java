@@ -4,12 +4,11 @@ import java.util.List;
 
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
 
-import com.olivia.dao.ProductDao;
+import com.olivia.dao.ImageDao;
 import com.olivia.model.Image;
-import com.olivia.model.Product;
 
 @SuppressWarnings("unchecked")
-public class ProductDaoImpl implements ProductDao {
+public class ImageDaoImpl implements ImageDao {
 
 	private SqlMapClientTemplate sqlMapClientTemplate = null;
 
@@ -21,17 +20,18 @@ public class ProductDaoImpl implements ProductDao {
 		this.sqlMapClientTemplate = sqlMapClientTemplate;
 	}
 
-	public List<Product> selectProduct() {
-		return (List<Product>) getSqlMapClientTemplate().queryForList("getProducts");
+	@Override
+	public List<Image> selectImage(String productid) throws Exception{
+		return (List<Image>) getSqlMapClientTemplate().queryForList("getImages", productid);
+	}
+	
+	@Override
+	public List<Image> selectImage(Image img) throws Exception {
+		return (List<Image>) getSqlMapClientTemplate().queryForList("selectImage", img);
 	}
 
 	@Override
-	public int updateProduct(Product p) {
-		return getSqlMapClientTemplate().update("updateProduct", p);
-	}
-
-	@Override
-	public List<Product> selectProduct(Product p) {
-		return getSqlMapClientTemplate().queryForList("selectProduct", p);
+	public int modifyImage(Image img) throws Exception{
+		return getSqlMapClientTemplate().update("modifyImage", img);
 	}
 }

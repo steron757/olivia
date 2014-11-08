@@ -10,6 +10,7 @@
 		<result property="introduction" column="introduction" jdbcType="VARCHAR" />
 		<result property="cover" column="cover" jdbcType="VARCHAR" />
 		<result property="createDate" column="create_date" jdbcType="VARCHAR" />
+		<result property="link" column="link" jdbcType="VARCHAR" />
 	</resultMap>
 	
 	<resultMap id="ImageMap" class="com.olivia.model.Image">
@@ -21,11 +22,21 @@
 	</resultMap>
 	
 	<select id="getProducts" resultMap="ProductMap">
-		SELECT ID,TITLE,INTRODUCTION,COVER,CREATE_DATE FROM T_PRODUCT ORDER BY ID DESC
+		SELECT ID,TITLE,INTRODUCTION,COVER,DATE_FORMAT(CREATE_DATE, '%y-%m-%d')CREATE_DATE,
+			LINK FROM T_PRODUCT ORDER BY ID DESC
 	</select>
 	
-	<select id="getImages" resultMap="ImageMap" parameterClass="java.lang.String">
-		SELECT T.ID,T.PRODUCT_ID,T.BRIEF_DESCRIPTION,T.DESCRIPTION,T.PATH 
-			FROM t_image T WHERE T.PRODUCT_ID = #productid:VARCHAR#
+	<select id="selectProduct" resultMap="ProductMap">
+		SELECT ID,TITLE,INTRODUCTION,COVER,DATE_FORMAT(CREATE_DATE, '%y-%m-%d')CREATE_DATE,
+			LINK FROM T_PRODUCT WHERE 1=1
+		<isNotEmpty property="id" prepend="and">
+			ID=#id:VARCHAR#
+		</isNotEmpty>
+		ORDER BY ID DESC
 	</select>
+	
+	<update id="updateProduct" parameterClass="com.olivia.model.Product">
+		UPDATE T_PRODUCT SET TITLE = #title:VARCHAR#,INTRODUCTION = #introduction:VARCHAR#,
+		COVER = #cover:VARCHAR# WHERE ID= #id:VARCHAR#
+	</update>
 </sqlMap>

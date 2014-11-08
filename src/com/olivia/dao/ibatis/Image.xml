@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+
+<sqlMap namespace="image">
+
+	<resultMap id="ImageMap" class="com.olivia.model.Image">
+		<result property="id" column="ID" jdbcType="VARCHAR" />
+		<result property="productId" column="PRODUCT_ID" jdbcType="VARCHAR" />
+		<result property="briefDescription" column="BRIEF_DESCRIPTION" jdbcType="VARCHAR" />
+		<result property="description" column="DESCRIPTION" jdbcType="VARCHAR" />
+		<result property="path" column="PATH" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<select id="getImages" resultMap="ImageMap" parameterClass="java.lang.String">
+		SELECT T.ID,T.PRODUCT_ID,T.BRIEF_DESCRIPTION,T.DESCRIPTION,T.PATH 
+			FROM T_IMAGE T WHERE T.PRODUCT_ID = #productid:VARCHAR#
+	</select>
+	
+	<select id="selectImage" resultMap="ImageMap" parameterClass="com.olivia.model.Image">
+		SELECT T.ID,T.PRODUCT_ID,T.BRIEF_DESCRIPTION,T.DESCRIPTION,T.PATH 
+			FROM T_IMAGE T WHERE 1=1
+		<isNotEmpty property="id" prepend="and">
+			ID=#id:VARCHAR#
+		</isNotEmpty>
+	</select>
+	
+	<update id="modifyImage" parameterClass="com.olivia.model.Image">
+		UPDATE T_IMAGE SET BRIEF_DESCRIPTION=#briefDescription:VARCHAR#,DESCRIPTION=#description:VARCHAR#
+			WHERE ID=#id:VARCHAR#
+	</update>
+</sqlMap>
