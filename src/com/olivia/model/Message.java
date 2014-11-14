@@ -8,6 +8,7 @@ public class Message {
 	private String subject;
 	private String content;
 	private String time;
+	private String ip;
 
 	public String getId() {
 		return id;
@@ -55,6 +56,14 @@ public class Message {
 
 	public void setTime(String time) {
 		this.time = time;
+	}
+
+	public String getIp() {
+		return ip;
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
 	}
 
 }

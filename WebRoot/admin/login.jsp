@@ -14,7 +14,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<IMG alt=HongCMS src="<%=path %>/images/mgr/logo-login.png">
 	</DIV>
 	<DIV id=login>
-		<FORM id=loginform method=post action="<%=path %>/user_login">
+		<FORM id=loginform method="get" action="<%=path %>/user_login">
 			<INPUT value=uRNgeiYj type=hidden name=key><INPUT
 				value=7f04npVPbRYc5cq1jrEOj8FnFqfABLDYv8+Dx0NdQz/fyT+OF/KBSsaa/2fvTNMHBlHNG++LcFnrARAKXw
 				type=hidden name=code>

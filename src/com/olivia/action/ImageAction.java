@@ -1,7 +1,16 @@
 package com.olivia.action;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+
+import org.apache.struts2.ServletActionContext;
 
 import com.olivia.dao.ImageDao;
 import com.olivia.model.Image;
@@ -19,6 +28,10 @@ public class ImageAction extends BaseAction {
 	
 	private ImageDao imageDao;
 
+	private List<File> img;
+	private List<String> imgFileName;
+	private List<String> imgContentType;
+	
 	public String tomdf() {
 		try {
 			setImageList(imageDao.selectImage(pid));
@@ -89,15 +102,88 @@ public class ImageAction extends BaseAction {
 				return null;
 			}
 			//Delete images
-			String path = request.getSession().getServletContext().getRealPath("") + "\\" + img.getPath();
+			String path = request.getRealPath("") + "\\" + img.getPath();
 			File file = new File(path);
 			boolean filedelete = false;
 			if (file.exists()){
 				filedelete = file.delete();
 			}
-			System.out.println("File delete result: " + filedelete);
+			System.out.println("Image delete result: " + filedelete);
 		}
 		return null;
+	}
+	
+	public String add() {
+		List<String> pathList = uploadCoverImage();
+		if(pathList == null){
+			response(false, "Upload image failed");
+			return "add";
+		}
+		for(String path : pathList){
+			Image img = new Image();
+			img.setPath(path);
+			img.setProductId(pid);
+			try {
+				imageDao.addImage(img);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return "add";
+	}
+	
+	private List<String> uploadCoverImage() {
+		String path = null;
+		// 得到工程保存图片的路径
+		String root = request.getRealPath("/upload");
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM");		//上传到当前月份
+		String newpath = root + "\\" + sdf.format(new Date());
+		File dir = new File(newpath);
+		dir.mkdir();
+		List<String> newNameList = new ArrayList<String>();		//新文件名
+		
+		// 循环上传的文件
+		try {
+			
+			for (int i = 0; i < img.size(); i++) {
+				InputStream is = new FileInputStream(img.get(i));
+
+				// 得到图片保存的位置(根据root来得到图片保存的路径在tomcat下的该工程里)
+				File destFile = null;
+				
+				String name = this.getImgFileName().get(i);		//改名
+				if(name.indexOf(".")<0){
+					return null;
+				} else {
+					name = System.currentTimeMillis() + "." + name.split("\\.")[1];
+				}
+				
+				if(dir.exists()){
+					path = "upload/" + sdf.format(new Date());
+					destFile = new File(newpath, name);
+				} else {
+					path = "upload/";
+					destFile = new File(root, name);
+				}
+				newNameList.add(path + "/" +name);
+				// 把图片写入到上面设置的路径里
+				OutputStream os = null;
+				os = new FileOutputStream(destFile);
+				byte[] buffer = new byte[400];
+				int length = 0;
+				while ((length = is.read(buffer)) > 0) {
+					os.write(buffer, 0, length);
+				}
+				is.close();
+				os.close();
+			}
+			imgFileName.clear();
+			imgFileName.addAll(newNameList);
+		} catch (Exception e) {
+			return null;
+		}
+		return newNameList;
 	}
 	
 	public ImageDao getImageDao() {
@@ -154,6 +240,30 @@ public class ImageAction extends BaseAction {
 
 	public void setPid(String pid) {
 		this.pid = pid;
+	}
+
+	public List<File> getImg() {
+		return img;
+	}
+
+	public void setImg(List<File> img) {
+		this.img = img;
+	}
+
+	public List<String> getImgFileName() {
+		return imgFileName;
+	}
+
+	public void setImgFileName(List<String> imgFileName) {
+		this.imgFileName = imgFileName;
+	}
+
+	public List<String> getImgContentType() {
+		return imgContentType;
+	}
+
+	public void setImgContentType(List<String> imgContentType) {
+		this.imgContentType = imgContentType;
 	}
 
 }

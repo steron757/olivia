@@ -2,6 +2,8 @@ package com.olivia.action;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import com.olivia.dao.ProductDao;
 import com.olivia.dao.UserDao;
 import com.olivia.model.Message;
@@ -23,7 +25,6 @@ public class UserAction extends BaseAction {
 	private List<Product> productList;
 	
 	public String login() {
-		System.out.println(username + "," + password);
 		if("luwei".equals(username) && "".equals(password)){
 			try {
 				productList = productDao.selectProduct();
@@ -41,6 +42,13 @@ public class UserAction extends BaseAction {
 		message.setEmail(email);
 		message.setSubject(subject);
 		message.setContent(content);
+		String ip = null;
+		if (((HttpServletRequest) request).getHeader("x-forwarded-for") == null) {
+			ip = request.getRemoteAddr();
+		} else {
+			ip = ((HttpServletRequest) request).getHeader("x-forwarded-for");
+		}
+		message.setIp(ip);
 		boolean result = false;
 		try {
 			result = userDao.addMessage(message);
@@ -51,7 +59,6 @@ public class UserAction extends BaseAction {
 			addActionMessage("留言出了点问题：" + e.getMessage());
 			e.printStackTrace();
 		}
-		System.out.println(result);
 		request.setAttribute("index", "6");
 		return "msg";
 	}

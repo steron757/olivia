@@ -14,4 +14,5 @@ public interface ImageDao {
 
 	public int deleteImage(String id) throws Exception;
 
+	public Image addImage(Image img) throws Exception;
 }

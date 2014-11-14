@@ -32,7 +32,7 @@ public class UploadImageAction extends BaseAction {
 	
 	public String execute() throws IOException {
 		// 得到工程保存图片的路径
-		String root = ServletActionContext.getRequest().getServletContext().getRealPath("/upload");
+		String root = request.getRealPath("/upload");
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM");		//上传到当前月份
 		String newpath = root + "\\" + sdf.format(new Date());

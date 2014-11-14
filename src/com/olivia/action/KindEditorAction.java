@@ -36,7 +36,7 @@ public class KindEditorAction extends BaseAction {
 	
 	@SuppressWarnings("unchecked")
 	public String upload() throws FileUploadException{
-		String savePath = request.getServletContext().getRealPath("/") + "upload/";
+		String savePath = request.getRealPath("/") + "upload/";
 
 		//文件保存目录URL
 		String saveUrl  = request.getContextPath() + "/upload/";
@@ -146,7 +146,7 @@ public class KindEditorAction extends BaseAction {
 	
 	@SuppressWarnings("unchecked")
 	public String fileManager(){
-		String rootPath = request.getServletContext().getRealPath("/") + "upload/";
+		String rootPath = request.getRealPath("/") + "upload/";
 		//根目录URL，可以指定绝对路径，比如 http://www.yoursite.com/attached/
 		String rootUrl  = request.getContextPath() + "/upload/";
 		//图片扩展名

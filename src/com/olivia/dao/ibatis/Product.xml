@@ -39,4 +39,13 @@
 		UPDATE T_PRODUCT SET TITLE = #title:VARCHAR#,INTRODUCTION = #introduction:VARCHAR#,
 		COVER = #cover:VARCHAR# WHERE ID= #id:VARCHAR#
 	</update>
+	
+	<insert id="addProduct" parameterClass="com.olivia.model.Product">
+		INSERT INTO T_PRODUCT(TITLE,INTRODUCTION,COVER,CREATE_DATE)VALUES
+		(#title:VARCHAR#,#introduction:VARCHAR#,#cover:VARCHAR#,NOW())
+	</insert>
+	
+	<delete id="deleteProduct" parameterClass="java.lang.String">
+		DELETE FROM T_PRODUCT WHERE ID=#id:VARCHAR#
+	</delete>
 </sqlMap>

@@ -33,4 +33,9 @@
 	<delete id="deleteImage" parameterClass="java.lang.String">
 		DELETE FROM T_IMAGE WHERE ID=#id:VARCHAR#
 	</delete>
+	
+	<insert id="addImage" parameterClass="com.olivia.model.Image">
+		INSERT INTO T_IMAGE(PRODUCT_ID,BRIEF_DESCRIPTION,DESCRIPTION,PATH) VALUES
+		(#productId:VARCHAR#,#briefDescription:VARCHAR#,#description:VARCHAR#,#path:VARCHAR#)
+	</insert>
 </sqlMap>

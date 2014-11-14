@@ -8,13 +8,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<title>Services - Cake Delights Web Template</title>
+	<title>Services - Cake Delights</title>
 </head>
 <body>
 	<div id="header">
 		<div>
 			<div class="section">
-				<a href="home"><img src="<%=path %>/images/wedding-cupcakes-small.jpg" alt="Image"></a>
+				<a href="home"><img src="<%=path %>/images/service-banner.png" alt="Image"></a>
 			</div>
 		</div>
 	</div>
@@ -23,11 +23,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="aside">
 				<h1>我们的服务</h1>
 				<span>私房甜品定制</span>
-				<p>***</p>
+				<p></p>
 				<span>零售精致蛋糕</span>
-				<p>***</p>
+				<p></p>
 				<span>婚礼甜品桌</span>
-				<p>***</p>
+				<p></p>
 			</div>
 			<div class="section">
 				<h3>最贴心的服务</h3>

@@ -67,10 +67,11 @@
 	<s:actionmessage></s:actionmessage>
 	
 	<s:form name="subjectForm" action="subject_add" method="post" >
+<%--	<s:form name="subjectForm" action="uploadOne" method="post" enctype="multipart/form-data">--%>
 <%--		<s:file name="file" label="文件1"></s:file><br>--%>
 <%--		<s:file name="file" label="文件2"></s:file><br>--%>
 <%--		<s:file name="file" label="文件3"></s:file><br>--%>
-<%--		<s:file name="file" label="文件4"></s:file><br>--%>
+		<s:file name="file" label="文件4"></s:file><br>
 		
 		<br />
 		<textarea name="content1" cols="100" rows="20" style="width:900px;height:400px;visibility:hidden;"></textarea>

@@ -18,8 +18,8 @@
 	</insert>
 
 	<insert id="insertMessage" parameterClass="com.olivia.model.Message">
-		INSERT INTO T_MESSAGE(NAME,EMAIL,SUBJECT,CONTENT,TIME) VALUE
-		(#name: VARCHAR#,#email: VARCHAR#,#subject:VARCHAR#,#content:VARCHAR#,NOW())
+		INSERT INTO T_MESSAGE(NAME,EMAIL,SUBJECT,CONTENT,TIME,IP) VALUE
+		(#name: VARCHAR#,#email: VARCHAR#,#subject:VARCHAR#,#content:VARCHAR#,NOW(),#ip:VARCHAR#)
 		<selectKey resultClass="java.lang.String" keyProperty="id">
 			SELECT LAST_INSERT_ID() AS ID
 		</selectKey>

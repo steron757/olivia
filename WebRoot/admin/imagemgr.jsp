@@ -31,7 +31,9 @@
 	}
 </style>
 <script src="<%=path %>/js/jquery-1.7.2.js"></script>
-
+<%
+	String pid = request.getParameter("pid");
+%>
 </head>
 
 <body>
@@ -44,6 +46,15 @@
 					<input type="button" value="全不选" onclick="clearAll()"/>
 					<input type="button" value="删除" id="delBtn"/>
 					<input type="button" value="新增"/>
+				</td>
+			</tr>
+			<tr id="addImgTr">
+				<td>
+					<form id="addImageForm" action="product/img_add" method="post" enctype="multipart/form-data">
+						<input type="file" name="img"><br />
+						<input type="hidden" name="pid" value="<%=pid%>">
+						<input type="submit" value="确定" id="doAddProduct">
+					</form>
 				</td>
 			</tr>
 		</thead>
@@ -106,7 +117,7 @@ $(document).ready(function() {
 		var id = $(this).parent().children("input:first").val();
 		$.ajax({
 			url : formURL, type : "POST",
-			data : { column:"1", pid: id, briefDescription: desc, },
+			data : { column:"1", id: id, briefDescription: desc, },
 			success : function(data, textStatus, jqXHR) {
 				td.children("span").html(desc);
 			},
@@ -125,7 +136,7 @@ $(document).ready(function() {
 		var id = $(this).parent().children("input:first").val();
 		$.ajax({
 			url : formURL, type : "POST",
-			data : { column:"2", pid: id, description: desc, },
+			data : { column:"2", id: id, description: desc, },
 			success : function(data, textStatus, jqXHR) {
 				td.children("span").html(desc);
 			},

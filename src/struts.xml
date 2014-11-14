@@ -9,15 +9,15 @@
 	<!--用spring管理struts2的action -->
 	<constant name="struts.objectFactory" value="spring" />
 	<!-- 临时存放文件的路径 如果不要这个路径，就会报错 -->
-	<constant name="struts.multipart.saveDir" value="d:/temp"></constant>
+	<constant name="struts.multipart.saveDir" value="D:\web\2014\olivia.hk10.yu-china.cn50099\webapps\ROOT\"></constant>
 	<!-- 限制总的上传大小 -->
 	<constant name="struts.multipart.maxSize" value="51200000" />
 
 	<!-- 上传文件时候request的上传内容会变成空的处理办法 -->
-	<bean type="org.apache.struts2.dispatcher.multipart.MultiPartRequest"
-		name="myRequestParser" class="com.olivia.util.RequestParseWrapper"
-		scope="default" optional="true " />
-	<constant name="struts.multipart.handler" value="myRequestParser" />
+<!-- 	<bean type="org.apache.struts2.dispatcher.multipart.MultiPartRequest" -->
+<!-- 		name="myRequestParser" class="com.olivia.util.RequestParseWrapper" -->
+<!-- 		scope="default" optional="true " /> -->
+<!-- 	<constant name="struts.multipart.handler" value="myRequestParser" /> -->
 
 	<package name="ssh" extends="struts-default,json-default,tiles-default">
 		<action name="base" class="com.olivia.action.BaseAction" />
@@ -79,7 +79,25 @@
 	<package name="product" namespace="/product" extends="ssh">
 		<action name="img_*" class="com.olivia.action.ImageAction" method="{1}">
 			<result name="viewimage">/admin/imagemgr.jsp</result>
+			<result name="add" type="redirectAction">
+				<param name="actionName">img_tomdf</param>
+				<param name="pid">${pid}</param>
+			</result>
 		</action>
+		<action name="pr_*" class="com.olivia.action.ProductAction" method="{1}">
+			<!-- 限制图片的格式和图片的大小 -->
+			<interceptor-ref name="fileUpload">
+				<param name="allowedTypes">image/bmp,image/png,image/gif,image/jpeg,image/jpg</param>
+				<param name="maximumSize">5120000</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack" />
+			<param name="save_path">/fileout</param>
+			<result name="input">/admin/productmgr.jsp</result>
+			<result name="list">/admin/productmgr.jsp</result>
+			<result name="addproduct">/admin/productmgr.jsp</result>
+			<result name="delproduct">/admin/productmgr.jsp</result>
+		</action>
+		
 		<action name="p" class="com.olivia.action.ProductAction" method="productDetail">
 			<result name="success" type="tiles">pdetail</result>
 		</action>

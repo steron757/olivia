@@ -15,7 +15,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div id="header">
 		<div>
 			<div class="section">
-				<a href="home"><img src="<%=path %>/images/wedding-cupcakes-small.jpg" alt="Image"></a>
+				<a href="home"><img src="<%=path %>/images/service-banner.png" alt="Image"></a>
 			</div>
 		</div>
 	</div>
