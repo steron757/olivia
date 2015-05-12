@@ -10,8 +10,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import org.apache.struts2.ServletActionContext;
-
 import com.olivia.dao.ImageDao;
 import com.olivia.dao.ProductDao;
 import com.olivia.model.Image;

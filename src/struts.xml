@@ -69,8 +69,12 @@
 			<result name="productMgr">/admin/productmgr.jsp</result>
 			<result name="error">/admin/login.jsp</result>
 			<result name="msg" type="tiles">contact</result>
+			<result name="signup">/signup.jsp</result>
 		</action>
 
+		<action name="ajaxUser_*" class="com.olivia.action.ajax.AjaxUserAction" method="{1}">
+		</action>
+		
 		<action name="test" class="com.olivia.Test">
 			<result name="success" type="tiles">home</result>
 		</action>
@@ -94,8 +98,8 @@
 			<param name="save_path">/fileout</param>
 			<result name="input">/admin/productmgr.jsp</result>
 			<result name="list">/admin/productmgr.jsp</result>
-			<result name="addproduct">/admin/productmgr.jsp</result>
-			<result name="delproduct">/admin/productmgr.jsp</result>
+			<result name="addproduct" type="redirectAction"><param name="actionName">pr_list</param></result>
+			<result name="delproduct" type="redirectAction"><param name="actionName">pr_list</param></result>
 		</action>
 		
 		<action name="p" class="com.olivia.action.ProductAction" method="productDetail">

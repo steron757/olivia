@@ -8,6 +8,7 @@ import com.olivia.dao.ProductDao;
 import com.olivia.dao.UserDao;
 import com.olivia.model.Message;
 import com.olivia.model.Product;
+import com.olivia.model.User;
 
 public class UserAction extends BaseAction {
 	private static final long serialVersionUID = 1L;
@@ -25,7 +26,7 @@ public class UserAction extends BaseAction {
 	private List<Product> productList;
 	
 	public String login() {
-		if("luwei".equals(username) && "".equals(password)){
+		if("".equals(username) && "".equals(password)){
 			try {
 				productList = productDao.selectProduct();
 			} catch (Exception e) {
@@ -63,6 +64,19 @@ public class UserAction extends BaseAction {
 		return "msg";
 	}
 
+	public String signup() {
+		User user = new User();
+		user.setName(username);
+		user.setPassword(password);
+		user.setEmail(email);
+		boolean result = userDao.addUser(user);
+		if(result)
+			this.addActionMessage("×¢²á³É¹¦");
+		else
+			this.addActionMessage("×¢²áÊ§°Ü");
+		return "signup";
+	}
+	
 	public String getUsername() {
 		return username;
 	}

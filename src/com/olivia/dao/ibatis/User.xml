@@ -25,4 +25,14 @@
 		</selectKey>
 	</insert>
 
+	<insert id="insertUser" parameterClass="com.olivia.model.User">
+		INSERT INTO T_USERS(NAME,PASSWORD,EMAIL) VALUES(#name: VARCHAR#,#password:VARCHAR#,#email:VARCHAR#)
+		<selectKey resultClass="java.lang.String" keyProperty="id">
+			SELECT LAST_INSERT_ID() AS ID
+		</selectKey>
+	</insert>
+	
+	<select id="checkEmail" parameterClass="java.lang.String" resultClass="java.lang.String">
+		SELECT EMAIL FROM T_USERS WHERE EMAIL = #email: VARCHAR#
+	</select>
 </sqlMap>

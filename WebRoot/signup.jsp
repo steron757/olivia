@@ -3,6 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
+<%@taglib uri="/struts-tags" prefix="s"%>
 <!DOCTYPE html>
 
 <html>
@@ -10,6 +11,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta charset="UTF-8" />
 	<title>Sign Up - Cake Delights Web Template</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript" src="<%=path%>/js/jquery-1.7.2.js"></script>
 	<!--[if IE 8]>
 		<link rel="stylesheet" type="text/css" href="css/ie8.css" />
 	<![endif]-->
@@ -57,24 +59,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div>
 			<div id="account">
 				<div>
-					<form action="#">
+					<form action="user_signup.action" method="post">
 						<span>注册</span>
+						<s:actionmessage cssStyle="height: 35px"/>
 						<table>
 							<tr>
 								<td><label for="email">邮箱</label></td>
-								<td><input type="text" id="email" /></td>
+								<td><input type="text" id="email" name="email" /></td>
 							</tr>
 							<tr>
-								<td><label for="login">用户名</label></td>
-								<td><input type="text" id="login" /></td>
+								<td><label for="username">用户名</label></td>
+								<td><input type="text" id="username" name="username"/></td>
 							</tr>
 							<tr>
 								<td><label for="password">密码</label></td>
-								<td><input type="text" id="password" /></td>
+								<td><input type="password" id="password" name="password"/></td>
 							</tr>
 							<tr>
 								<td><label for="confirmpass">重复密码</label></td>
-								<td><input type="text" id="confirmpass" /></td>
+								<td><input type="password" id="confirmpass" /></td>
 							</tr>
 							<tr>
 								<td></td>
@@ -82,7 +85,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<input type="checkbox" id="rememberme" />记住我</label></td>
 							</tr>
 						</table>
-						<input type="submit" value="注册" class="submitbtn" />
+						<input type="submit" value="注册" class="submitbtn" style="cursor: pointer;"/>
 					</form>
 				</div>
 			</div>
@@ -125,5 +128,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 		</div>
 	</div>
+	
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#email").blur(function() {
+				var email = $("#email").val();
+				var response = $.ajax({
+					url : "ajaxUser_checkEmail.action",
+					data: {email: email},
+					async : false
+				});
+			});
+		});
+	</script>
 </body>
 </html>

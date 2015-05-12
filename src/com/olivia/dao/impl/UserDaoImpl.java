@@ -34,4 +34,19 @@ public class UserDaoImpl implements UserDao {
 		Object obj = this.getSqlMapClientTemplate().insert("insertMessage", message);
 		return obj != null;
 	}
+
+	@Override
+	public boolean addUser(User user) {
+		Object obj = this.getSqlMapClientTemplate().insert("insertUser", user);
+		return obj != null;
+	}
+
+	@Override
+	public boolean checkEmail(String email) throws Exception {
+		List<?> l = getSqlMapClientTemplate().queryForList("checkEmail", email);
+		if(l == null || l.size() == 0) {
+			return true;
+		}
+		return false;
+	}
 }

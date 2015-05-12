@@ -37,20 +37,27 @@
 </head>
 
 <body>
-	<table>
+	<table style="width: 100%;">
 		<thead>
-			<tr><td>图片</td><td>简介</td><td>描述</td></tr>
 			<tr>
-				<td>
+				<td style="width: 34%">图片</td>
+				<td style="width: 33%">简介</td>
+				<td style="width: 33%">描述</td></tr>
+			<tr>
+				<td colspan="3">
 					<input type="button" value="全选" onclick="selectAll()"/>
 					<input type="button" value="全不选" onclick="clearAll()"/>
 					<input type="button" value="删除" id="delBtn"/>
-					<input type="button" value="新增"/>
+					<input type="button" value="新增" onclick="$('#addImgTr').toggle(500)"/>
 				</td>
 			</tr>
-			<tr id="addImgTr">
-				<td>
+			<tr id="addImgTr" style="display: none;">
+				<td colspan="3">
 					<form id="addImageForm" action="product/img_add" method="post" enctype="multipart/form-data">
+						<input type="file" name="img"><br />
+						<input type="file" name="img"><br />
+						<input type="file" name="img"><br />
+						<input type="file" name="img"><br />
 						<input type="file" name="img"><br />
 						<input type="hidden" name="pid" value="<%=pid%>">
 						<input type="submit" value="确定" id="doAddProduct">

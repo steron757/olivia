@@ -13,4 +13,14 @@ public interface UserDao extends BaseDao {
 	public boolean insertIP(User user) throws Exception;
 	
 	public boolean addMessage(Message message) throws Exception;
+
+	public boolean addUser(User user);
+
+	/**
+	 * 检查Email, true为可用
+	 * @param email
+	 * @return
+	 * @throws Exception 
+	 */
+	public boolean checkEmail(String email) throws Exception;
 }
