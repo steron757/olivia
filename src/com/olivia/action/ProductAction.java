@@ -161,6 +161,7 @@ public class ProductAction extends BaseAction {
 		String path = null;
 		// 得到工程保存图片的路径
 //		String root = ServletActionContext.getRequest().getServletContext().getRealPath("/upload");
+		@SuppressWarnings("deprecation")
 		String root = request.getRealPath("/upload");
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM");		//上传到当前月份

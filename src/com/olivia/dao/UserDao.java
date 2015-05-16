@@ -14,7 +14,7 @@ public interface UserDao extends BaseDao {
 	
 	public boolean addMessage(Message message) throws Exception;
 
-	public boolean addUser(User user);
+	public boolean addUser(User user) throws Exception;
 
 	/**
 	 * 检查Email, true为可用

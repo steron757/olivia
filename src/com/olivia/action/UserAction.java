@@ -64,7 +64,7 @@ public class UserAction extends BaseAction {
 		return "msg";
 	}
 
-	public String signup() {
+	public String signup() throws Exception {
 		User user = new User();
 		user.setName(username);
 		user.setPassword(password);

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans
-	xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:p="http://www.springframework.org/schema/p"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
 
 	<bean id="propertyConfig"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -12,6 +14,12 @@
 		</property>
 	</bean>
 	
+	<!-- 注解方式配置事务 -->
+	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<tx:annotation-driven transaction-manager="txManager" proxy-target-class="true"/>
+
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName">
@@ -27,20 +35,20 @@
 			<value>${jdbc.password}</value>
 		</property>
 	</bean>
-	<!-- Spring提供的iBatis的SqlMap配置-->
+	<!-- Spring提供的iBatis的SqlMap配置 -->
 	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
 		<property name="configLocation" value="classpath:sql-map-config.xml" />
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 
-	<!--sqlMapClient的模板类-->
+	<!--sqlMapClient的模板类 -->
 	<bean id="sqlMapClientTemplate" class="org.springframework.orm.ibatis.SqlMapClientTemplate">
 		<property name="sqlMapClient">
 			<ref bean="sqlMapClient" />
 		</property>
 	</bean>
 
-	<!-- DAO定义-->
+	<!-- DAO定义 -->
 	<bean id="productDao" class="com.olivia.dao.impl.ProductDaoImpl">
 		<property name="sqlMapClientTemplate" ref="sqlMapClientTemplate" />
 	</bean>
@@ -50,5 +58,5 @@
 	<bean id="imageDao" class="com.olivia.dao.impl.ImageDaoImpl">
 		<property name="sqlMapClientTemplate" ref="sqlMapClientTemplate" />
 	</bean>
-	
+
 </beans>

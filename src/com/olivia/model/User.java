@@ -10,6 +10,16 @@ public class User {
 	private String ip;
 	private String belongcity;
 
+	public User() {
+		super();
+	}
+
+	public User(String name, String password) {
+		super();
+		this.name = name;
+		this.password = password;
+	}
+
 	public String getId() {
 		return id;
 	}
